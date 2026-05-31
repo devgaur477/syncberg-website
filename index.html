@@ -3,10 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>syncberg</title>
+  <title>Syncberg</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tailwind config for custom colors (badge primary)
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#ff6b6b', // badge color
+            secondary: '#4e54c8',
+            background: '#0a0a0a',
+            surface: '#1a1a1a',
+          },
+        },
+      },
+    };
+  </script>
 </head>
-<body class="bg-gray-900 text-white">
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
+<body class="bg-gray-100 text-gray-900 flex items-center justify-center min-h-screen">
+  <div class="text-center p-8 bg-white rounded-lg shadow-lg">
+    <!-- Badge -->
+    <span class="inline-block bg-primary text-white text-sm font-semibold px-2 py-1 rounded mb-4">Coming Soon</span>
+    <h1 class="text-5xl font-bold mb-4">Syncberg</h1>
+    <p class="text-xl mb-6">Find friends, host events, share moments.</p>
+    <div class="space-x-4">
+      <a href="#" class="px-6 py-2 bg-primary text-white rounded-full hover:bg-primary/80 transition">Join Beta</a>
+      <a href="#" class="px-6 py-2 bg-gray-300 text-gray-800 rounded-full hover:bg-gray-400 transition">Learn More</a>
+    </div>
+  </div>
+</body>
+<script src="https://cdn.tailwindcss.com"></script>
 </body>
 </html>
