@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Syncberg — Welcome to the Meta City</title>
-  <meta name="description" content="Syncberg is where connections come alive. Find people who share your passions, host events, and build meaningful relationships in a digital city designed for real connections." />
+  <meta name="description"
+    content="Syncberg is where connections come alive. Find people who share your passions, host events, and build meaningful relationships in a digital city designed for real connections." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     :root {
       --cream: #f5f2ec;
@@ -58,7 +66,10 @@
       justify-content: center;
     }
 
-    .nav-logo-icon svg { width: 18px; height: 18px; }
+    .nav-logo-icon svg {
+      width: 18px;
+      height: 18px;
+    }
 
     .nav-logo-text {
       font-size: 17px;
@@ -79,7 +90,10 @@
       text-decoration: none;
       transition: opacity 0.2s;
     }
-    .nav-cta:hover { opacity: 0.85; }
+
+    .nav-cta:hover {
+      opacity: 0.85;
+    }
 
     /* ── HERO ── */
     .hero {
@@ -182,7 +196,11 @@
       text-decoration: none;
       transition: opacity 0.2s, transform 0.15s;
     }
-    .btn-primary:hover { opacity: 0.85; transform: translateY(-1px); }
+
+    .btn-primary:hover {
+      opacity: 0.85;
+      transform: translateY(-1px);
+    }
 
     .btn-outline {
       display: inline-flex;
@@ -197,7 +215,11 @@
       text-decoration: none;
       transition: background 0.2s, transform 0.15s;
     }
-    .btn-outline:hover { background: rgba(0,0,0,0.04); transform: translateY(-1px); }
+
+    .btn-outline:hover {
+      background: rgba(0, 0, 0, 0.04);
+      transform: translateY(-1px);
+    }
 
     /* ── FEATURES SECTION ── */
     .features {
@@ -234,9 +256,17 @@
     }
 
     @media (max-width: 680px) {
-      .features-grid { grid-template-columns: 1fr; }
-      nav { padding: 0 20px; }
-      .hero { padding: 70px 20px 90px; }
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        padding: 0 20px;
+      }
+
+      .hero {
+        padding: 70px 20px 90px;
+      }
     }
 
     .feature-card {
@@ -247,8 +277,9 @@
       text-align: left;
       transition: box-shadow 0.2s, transform 0.2s;
     }
+
     .feature-card:hover {
-      box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07);
       transform: translateY(-3px);
     }
 
@@ -262,7 +293,12 @@
       justify-content: center;
       margin-bottom: 18px;
     }
-    .feature-icon svg { width: 24px; height: 24px; color: #fff; }
+
+    .feature-icon svg {
+      width: 24px;
+      height: 24px;
+      color: #fff;
+    }
 
     .feature-card h3 {
       font-size: 17px;
@@ -327,12 +363,15 @@
       transition: box-shadow 0.2s, transform 0.15s;
       cursor: default;
     }
+
     .tag:hover {
-      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
       transform: translateY(-2px);
     }
 
-    .tag-emoji { font-size: 16px; }
+    .tag-emoji {
+      font-size: 16px;
+    }
 
     .interests-cta {
       display: inline-flex;
@@ -346,7 +385,11 @@
       text-decoration: none;
       transition: opacity 0.2s, transform 0.15s;
     }
-    .interests-cta:hover { opacity: 0.85; transform: translateY(-1px); }
+
+    .interests-cta:hover {
+      opacity: 0.85;
+      transform: translateY(-1px);
+    }
 
     /* ── BETA CTA SECTION ── */
     .beta-section {
@@ -373,7 +416,7 @@
       margin-bottom: 16px;
     }
 
-    .beta-card > p {
+    .beta-card>p {
       font-size: 15px;
       color: #a0a8bc;
       line-height: 1.7;
@@ -400,7 +443,10 @@
       color: var(--dark);
       outline: none;
     }
-    .beta-input::placeholder { color: #9ca3af; }
+
+    .beta-input::placeholder {
+      color: #9ca3af;
+    }
 
     .beta-submit {
       padding: 13px 24px;
@@ -415,7 +461,11 @@
       white-space: nowrap;
       transition: opacity 0.2s, transform 0.15s;
     }
-    .beta-submit:hover { opacity: 0.85; transform: translateY(-1px); }
+
+    .beta-submit:hover {
+      opacity: 0.85;
+      transform: translateY(-1px);
+    }
 
     .beta-disclaimer {
       font-size: 12px;
@@ -452,13 +502,17 @@
     .footer-logo-icon {
       width: 28px;
       height: 28px;
-      background: rgba(255,255,255,0.15);
+      background: rgba(255, 255, 255, 0.15);
       border-radius: 7px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
-    .footer-logo-icon svg { width: 16px; height: 16px; }
+
+    .footer-logo-icon svg {
+      width: 16px;
+      height: 16px;
+    }
 
     .footer-logo-text {
       font-size: 16px;
@@ -482,19 +536,27 @@
       width: 36px;
       height: 36px;
       border-radius: 8px;
-      background: rgba(255,255,255,0.08);
+      background: rgba(255, 255, 255, 0.08);
       display: flex;
       align-items: center;
       justify-content: center;
       transition: background 0.2s;
       text-decoration: none;
     }
-    .social-link:hover { background: rgba(255,255,255,0.16); }
-    .social-link svg { width: 16px; height: 16px; color: #a0a8bc; }
+
+    .social-link:hover {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .social-link svg {
+      width: 16px;
+      height: 16px;
+      color: #a0a8bc;
+    }
 
     .footer-divider {
       border: none;
-      border-top: 1px solid rgba(255,255,255,0.07);
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
       margin-bottom: 20px;
     }
 
@@ -504,13 +566,74 @@
       color: #5a6275;
     }
 
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .beta-feedback {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-radius: 12px;
+      padding: 14px 18px;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 16px;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .beta-feedback--success {
+      background: rgba(52, 211, 153, 0.12);
+      color: #6ee7b7;
+      border: 1px solid rgba(52, 211, 153, 0.25);
+    }
+
+    .beta-feedback--error {
+      background: rgba(248, 113, 113, 0.12);
+      color: #fca5a5;
+      border: 1px solid rgba(248, 113, 113, 0.25);
+    }
+
+    .beta-submit:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
     @media (max-width: 680px) {
-      .beta-card { padding: 40px 24px; }
-      footer { padding: 32px 20px 24px; }
-      .footer-top { flex-direction: column; align-items: flex-start; }
+      .beta-card {
+        padding: 40px 24px;
+      }
+
+      footer {
+        padding: 32px 20px 24px;
+      }
+
+      .footer-top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <!-- NAVBAR -->
@@ -519,10 +642,10 @@
       <div class="nav-logo-icon">
         <!-- rounded square icon with inner dot/shape like in screenshot -->
         <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="2" y="2" width="14" height="14" rx="3" fill="white" opacity="0.9"/>
-          <rect x="5" y="5" width="4" height="4" rx="1" fill="#161b2e"/>
-          <rect x="9.5" y="5" width="3.5" height="3.5" rx="1" fill="#161b2e"/>
-          <rect x="5" y="9.5" width="8" height="3.5" rx="1" fill="#161b2e"/>
+          <rect x="2" y="2" width="14" height="14" rx="3" fill="white" opacity="0.9" />
+          <rect x="5" y="5" width="4" height="4" rx="1" fill="#161b2e" />
+          <rect x="9.5" y="5" width="3.5" height="3.5" rx="1" fill="#161b2e" />
+          <rect x="5" y="9.5" width="8" height="3.5" rx="1" fill="#161b2e" />
         </svg>
       </div>
       <span class="nav-logo-text">Syncberg</span>
@@ -536,7 +659,8 @@
     <div class="hero-inner">
       <span class="badge" id="coming-soon-badge">Coming Soon</span>
       <h1>Welcome to the<br>Meta City</h1>
-      <p>Syncberg is where connections come alive. Find people who share your passions, host events, and build meaningful relationships in a digital city designed for real connections.</p>
+      <p>Syncberg is where connections come alive. Find people who share your passions, host events, and build
+        meaningful relationships in a digital city designed for real connections.</p>
       <div class="hero-buttons">
         <a href="#" class="btn-primary" id="get-early-access-btn">Get Early Access</a>
         <a href="#" class="btn-outline" id="learn-more-btn">Learn More</a>
@@ -557,11 +681,12 @@
       <div class="feature-card" id="feature-tribe">
         <div class="feature-icon">
           <!-- people / tribe icon -->
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="9" cy="7" r="3"/>
-            <path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-            <path d="M21 21v-2a4 4 0 0 0-3-3.85"/>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <circle cx="9" cy="7" r="3" />
+            <path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
+            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            <path d="M21 21v-2a4 4 0 0 0-3-3.85" />
           </svg>
         </div>
         <h3>Find Your Tribe</h3>
@@ -572,11 +697,12 @@
       <div class="feature-card" id="feature-events">
         <div class="feature-icon">
           <!-- calendar icon -->
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="4" width="18" height="18" rx="2"/>
-            <line x1="16" y1="2" x2="16" y2="6"/>
-            <line x1="8" y1="2" x2="8" y2="6"/>
-            <line x1="3" y1="10" x2="21" y2="10"/>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" />
+            <line x1="16" y1="2" x2="16" y2="6" />
+            <line x1="8" y1="2" x2="8" y2="6" />
+            <line x1="3" y1="10" x2="21" y2="10" />
           </svg>
         </div>
         <h3>Host &amp; Join Events</h3>
@@ -587,9 +713,10 @@
       <div class="feature-card" id="feature-search">
         <div class="feature-icon">
           <!-- search icon -->
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="7"/>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <circle cx="11" cy="11" r="7" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
           </svg>
         </div>
         <h3>Discover &amp; Search</h3>
@@ -603,7 +730,8 @@
   <section class="interests" id="interests">
     <div class="interests-header">
       <h2>Every Interest, One Platform</h2>
-      <p>Whatever brings you joy, you'll find your people on Syncberg. Explore communities built around the things you love.</p>
+      <p>Whatever brings you joy, you'll find your people on Syncberg. Explore communities built around the things you
+        love.</p>
     </div>
 
     <div class="interests-tags">
@@ -628,18 +756,47 @@
   <section class="beta-section" id="beta">
     <div class="beta-card">
       <h2>Be Among the First</h2>
-      <p>Join our exclusive beta program and help shape the future of Syncberg. Early access, special perks, and a chance to build the community from day one.</p>
-      <form class="beta-form" id="beta-form" onsubmit="return false;">
-        <input
-          id="beta-email-input"
-          class="beta-input"
-          type="email"
-          placeholder="Enter your email"
-          required
-        />
-        <button type="submit" class="beta-submit">Join Beta</button>
+      <p>Join our exclusive beta program and help shape the future of Syncberg. Early access, special perks, and a
+        chance to build the community from day one.</p>
+
+      <!-- Default form state -->
+      <form class="beta-form" id="beta-form">
+        <input id="beta-email-input" class="beta-input" type="email" placeholder="Enter your email" required
+          autocomplete="email" />
+        <button type="submit" class="beta-submit" id="beta-submit-btn">
+          <span id="btn-label">Join Beta</span>
+          <svg id="btn-spinner"
+            style="display:none;animation:spin 0.8s linear infinite;width:16px;height:16px;margin-left:6px;"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+            <path
+              d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"
+              stroke-linecap="round" />
+          </svg>
+        </button>
       </form>
-      <p class="beta-disclaimer">No spam, ever. Just updates about Syncberg's launch and exclusive beta features.</p>
+
+      <!-- Success state (hidden by default) -->
+      <div id="beta-success" style="display:none;" class="beta-feedback beta-feedback--success">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+          stroke-linejoin="round" style="width:22px;height:22px;flex-shrink:0;">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M8 12l3 3 5-5" />
+        </svg>
+        <span>You're on the list! We'll be in touch soon. 🎉</span>
+      </div>
+
+      <!-- Error state (hidden by default) -->
+      <div id="beta-error" style="display:none;" class="beta-feedback beta-feedback--error">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+          stroke-linejoin="round" style="width:22px;height:22px;flex-shrink:0;">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M12 8v4M12 16h.01" />
+        </svg>
+        <span id="beta-error-msg">Something went wrong. Please try again.</span>
+      </div>
+
+      <p class="beta-disclaimer" id="beta-disclaimer">No spam, ever. Just updates about Syncberg's launch and exclusive
+        beta features.</p>
     </div>
   </section>
 
@@ -650,10 +807,10 @@
         <div class="footer-logo-row">
           <div class="footer-logo-icon">
             <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="2" y="2" width="14" height="14" rx="3" fill="white" opacity="0.9"/>
-              <rect x="5" y="5" width="4" height="4" rx="1" fill="#161b2e"/>
-              <rect x="9.5" y="5" width="3.5" height="3.5" rx="1" fill="#161b2e"/>
-              <rect x="5" y="9.5" width="8" height="3.5" rx="1" fill="#161b2e"/>
+              <rect x="2" y="2" width="14" height="14" rx="3" fill="white" opacity="0.9" />
+              <rect x="5" y="5" width="4" height="4" rx="1" fill="#161b2e" />
+              <rect x="9.5" y="5" width="3.5" height="3.5" rx="1" fill="#161b2e" />
+              <rect x="5" y="9.5" width="8" height="3.5" rx="1" fill="#161b2e" />
             </svg>
           </div>
           <span class="footer-logo-text">Syncberg</span>
@@ -665,23 +822,25 @@
         <!-- Twitter / X -->
         <a href="#" class="social-link" id="twitter-link" aria-label="Twitter">
           <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L2.25 2.25h6.893l4.265 5.633zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            <path
+              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L2.25 2.25h6.893l4.265 5.633zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
           </svg>
         </a>
         <!-- Instagram -->
         <a href="#" class="social-link" id="instagram-link" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="2" width="20" height="20" rx="5"/>
-            <circle cx="12" cy="12" r="4"/>
-            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" />
           </svg>
         </a>
         <!-- LinkedIn -->
         <a href="#" class="social-link" id="linkedin-link" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-            <rect x="2" y="9" width="4" height="12"/>
-            <circle cx="4" cy="4" r="2"/>
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+            <rect x="2" y="9" width="4" height="12" />
+            <circle cx="4" cy="4" r="2" />
           </svg>
         </a>
       </div>
@@ -694,5 +853,90 @@
     </div>
   </footer>
 
+  <script>
+    (function () {
+      // ── CONFIG ──────────────────────────────────────────────────────────────
+      // Fine-grained GitHub PAT with ONLY "Actions: Write" on this one repo.
+      // Worst case if exposed: someone can trigger this workflow — nothing else.
+      // Generate one at: https://github.com/settings/tokens?type=beta
+      const GH_PAT = '';
+      const GH_REPO = 'devgaur477/syncberg-website'; // owner/repo
+      // ────────────────────────────────────────────────────────────────────────
+
+      const form = document.getElementById('beta-form');
+      const emailInput = document.getElementById('beta-email-input');
+      const submitBtn = document.getElementById('beta-submit-btn');
+      const btnLabel = document.getElementById('btn-label');
+      const btnSpinner = document.getElementById('btn-spinner');
+      const successEl = document.getElementById('beta-success');
+      const errorEl = document.getElementById('beta-error');
+      const errorMsg = document.getElementById('beta-error-msg');
+      const disclaimer = document.getElementById('beta-disclaimer');
+
+      function setLoading(loading) {
+        submitBtn.disabled = loading;
+        emailInput.disabled = loading;
+        btnLabel.textContent = loading ? 'Sending\u2026' : 'Join Beta';
+        btnSpinner.style.display = loading ? 'inline-block' : 'none';
+      }
+
+      function showSuccess() {
+        form.style.display = 'none';
+        disclaimer.style.display = 'none';
+        errorEl.style.display = 'none';
+        successEl.style.display = 'flex';
+      }
+
+      function showError(message) {
+        errorMsg.textContent = message || 'Something went wrong. Please try again.';
+        errorEl.style.display = 'flex';
+        successEl.style.display = 'none';
+      }
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const email = emailInput.value.trim();
+        if (!email) return;
+
+        setLoading(true);
+        errorEl.style.display = 'none';
+
+        try {
+          // Trigger GitHub Actions workflow — RESEND_API_KEY stays in GitHub Secrets
+          const res = await fetch(
+            'https://api.github.com/repos/' + GH_REPO + '/dispatches',
+            {
+              method: 'POST',
+              headers: {
+                'Authorization': 'Bearer ' + GH_PAT,
+                'Accept': 'application/vnd.github+json',
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                event_type: 'beta-signup',
+                client_payload: {
+                  email: email,
+                  timestamp: new Date().toUTCString(),
+                },
+              }),
+            }
+          );
+
+          // GitHub returns 204 No Content on success
+          if (res.status === 204) {
+            showSuccess();
+          } else {
+            const data = await res.json().catch(() => ({}));
+            showError(data.message || 'Failed to sign up. Please try again.');
+            setLoading(false);
+          }
+        } catch (err) {
+          showError('Network error. Please check your connection and try again.');
+          setLoading(false);
+        }
+      });
+    })();
+  </script>
 </body>
+
 </html>

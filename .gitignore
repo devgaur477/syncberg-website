@@ -1,0 +1,15 @@
+# Environment variables — never commit secrets
+.env
+.env.local
+.env.*.local
+
+# Vite / build output
+dist/
+node_modules/
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
