@@ -853,89 +853,75 @@
     </div>
   </footer>
 
-  <script>
-    (function () {
-      // ── CONFIG ──────────────────────────────────────────────────────────────
-      // Fine-grained GitHub PAT with ONLY "Actions: Write" on this one repo.
-      // Worst case if exposed: someone can trigger this workflow — nothing else.
-      // Generate one at: https://github.com/settings/tokens?type=beta
-      const GH_PAT = '';
-      const GH_REPO = 'devgaur477/syncberg-website'; // owner/repo
-      // ────────────────────────────────────────────────────────────────────────
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
-      const form = document.getElementById('beta-form');
-      const emailInput = document.getElementById('beta-email-input');
-      const submitBtn = document.getElementById('beta-submit-btn');
-      const btnLabel = document.getElementById('btn-label');
-      const btnSpinner = document.getElementById('btn-spinner');
-      const successEl = document.getElementById('beta-success');
-      const errorEl = document.getElementById('beta-error');
-      const errorMsg = document.getElementById('beta-error-msg');
-      const disclaimer = document.getElementById('beta-disclaimer');
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyClpfuGxRN6e1v-yrcgdcwtgYl_MO42r2A",
+      authDomain: "syncberg-6a42f.firebaseapp.com",
+      projectId: "syncberg-6a42f",
+      storageBucket: "syncberg-6a42f.firebasestorage.app",
+      messagingSenderId: "685130644728",
+      appId: "1:685130644728:web:9af001b3cdaf283370cf0d",
+      measurementId: "G-LP4HLKR865"
+    };
 
-      function setLoading(loading) {
-        submitBtn.disabled = loading;
-        emailInput.disabled = loading;
-        btnLabel.textContent = loading ? 'Sending\u2026' : 'Join Beta';
-        btnSpinner.style.display = loading ? 'inline-block' : 'none';
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const form = document.getElementById('beta-form');
+    const emailInput = document.getElementById('beta-email-input');
+    const submitBtn = document.getElementById('beta-submit-btn');
+    const btnLabel = document.getElementById('btn-label');
+    const btnSpinner = document.getElementById('btn-spinner');
+    const successEl = document.getElementById('beta-success');
+    const errorEl = document.getElementById('beta-error');
+    const errorMsg = document.getElementById('beta-error-msg');
+    const disclaimer = document.getElementById('beta-disclaimer');
+
+    function setLoading(loading) {
+      submitBtn.disabled = loading;
+      emailInput.disabled = loading;
+      btnLabel.textContent = loading ? 'Sending\u2026' : 'Join Beta';
+      btnSpinner.style.display = loading ? 'inline-block' : 'none';
+    }
+
+    function showSuccess() {
+      form.style.display = 'none';
+      disclaimer.style.display = 'none';
+      errorEl.style.display = 'none';
+      successEl.style.display = 'flex';
+    }
+
+    function showError(message) {
+      errorMsg.textContent = message || 'Something went wrong. Please try again.';
+      errorEl.style.display = 'flex';
+      successEl.style.display = 'none';
+    }
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const email = emailInput.value.trim();
+      if (!email) return;
+
+      setLoading(true);
+      errorEl.style.display = 'none';
+
+      try {
+        await addDoc(collection(db, "waitlist"), {
+          email: email,
+          timestamp: serverTimestamp()
+        });
+        showSuccess();
+      } catch (err) {
+        console.error("Firebase error: ", err);
+        showError('Failed to sign up. Please try again.');
+        setLoading(false);
       }
-
-      function showSuccess() {
-        form.style.display = 'none';
-        disclaimer.style.display = 'none';
-        errorEl.style.display = 'none';
-        successEl.style.display = 'flex';
-      }
-
-      function showError(message) {
-        errorMsg.textContent = message || 'Something went wrong. Please try again.';
-        errorEl.style.display = 'flex';
-        successEl.style.display = 'none';
-      }
-
-      form.addEventListener('submit', async function (e) {
-        e.preventDefault();
-        const email = emailInput.value.trim();
-        if (!email) return;
-
-        setLoading(true);
-        errorEl.style.display = 'none';
-
-        try {
-          // Trigger GitHub Actions workflow — RESEND_API_KEY stays in GitHub Secrets
-          const res = await fetch(
-            'https://api.github.com/repos/' + GH_REPO + '/dispatches',
-            {
-              method: 'POST',
-              headers: {
-                'Authorization': 'Bearer ' + GH_PAT,
-                'Accept': 'application/vnd.github+json',
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify({
-                event_type: 'beta-signup',
-                client_payload: {
-                  email: email,
-                  timestamp: new Date().toUTCString(),
-                },
-              }),
-            }
-          );
-
-          // GitHub returns 204 No Content on success
-          if (res.status === 204) {
-            showSuccess();
-          } else {
-            const data = await res.json().catch(() => ({}));
-            showError(data.message || 'Failed to sign up. Please try again.');
-            setLoading(false);
-          }
-        } catch (err) {
-          showError('Network error. Please check your connection and try again.');
-          setLoading(false);
-        }
-      });
-    })();
+    });
   </script>
 </body>
 
