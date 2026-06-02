@@ -1357,8 +1357,12 @@
         chance to build the community from day one.</p>
 
       <!-- Default form state -->
-      <form class="beta-form" id="beta-form">
-        <input id="beta-email-input" class="beta-input" type="email" placeholder="Enter your email" required
+      <form class="beta-form" id="beta-form" action="https://formsubmit.co/support@syncberg.com" method="POST">
+        <input type="hidden" name="_subject" value="🎉 New Beta Signup — Syncberg City">
+        <input type="hidden" name="_autoresponse" value="Congrats for joining Syncberg City. Beta version will soon be shared.">
+        <input type="hidden" name="_next" id="next-redirect-input" value="">
+
+        <input id="beta-email-input" name="email" class="beta-input" type="email" placeholder="Enter your email" required
           autocomplete="email" />
         <button type="submit" class="beta-submit" id="beta-submit-btn">
           <span id="btn-label">Join Beta</span>
@@ -1502,6 +1506,14 @@
       successEl.style.display = 'none';
     }
 
+    // Check if redirecting back from a successful FormSubmit POST
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('success') === 'true') {
+      showSuccess();
+      const cleanUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
+      window.history.replaceState({ path: cleanUrl }, '', cleanUrl);
+    }
+
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
       const email = emailInput.value.trim();
@@ -1510,7 +1522,7 @@
       setLoading(true);
       errorEl.style.display = 'none';
 
-      // Check that the email ends with @gmail.com or @outlook.com
+      // Check that the email ends with @gmail.com or @syncberg.com or @outlook.com
       const emailLower = email.toLowerCase();
       if (!emailLower.endsWith('@gmail.com') && !emailLower.endsWith('@syncberg.com') && !emailLower.endsWith('@outlook.com')) {
         showError('Only Gmail (@gmail.com) and Outlook (@outlook.com) email addresses are allowed.');
@@ -1525,27 +1537,14 @@
           timestamp: serverTimestamp()
         });
 
-        // 2. Send welcome email and admin notification via FormSubmit (100% Free)
-        try {
-          await fetch("https://formsubmit.co/ajax/support@syncberg.com", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              "Accept": "application/json"
-            },
-            body: JSON.stringify({
-              email: email,
-              _subject: "🎉 New Beta Signup — Syncberg City",
-              _autoresponder: "Congrats for joining Syncberg City. Beta version will soon be shared."
-            })
-          });
-        } catch (mailErr) {
-          console.error("FormSubmit mail trigger error: ", mailErr);
-          // We don't fail the user signup if the email notification fails,
-          // because their email was successfully saved in Firestore.
+        // 2. Set redirect URL dynamically
+        const redirectInput = document.getElementById('next-redirect-input');
+        if (redirectInput) {
+          redirectInput.value = window.location.protocol + "//" + window.location.host + window.location.pathname + "?success=true";
         }
 
-        showSuccess();
+        // 3. Submit the form programmatically to FormSubmit (bypasses submit listener)
+        form.submit();
       } catch (err) {
         console.error("Firebase error: ", err);
         showError('Failed to sign up. Please try again.');
