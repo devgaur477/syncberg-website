@@ -1,9 +1,6 @@
 name: Waitlist Welcome Email Dispatcher
 
 on:
-  schedule:
-    # Run every 10 minutes (keeps it completely free under GitHub Action build minutes)
-    - cron: '*/10 * * * *'
   workflow_dispatch:
     # Allows manual trigger of the workflow from the GitHub UI for testing
 
