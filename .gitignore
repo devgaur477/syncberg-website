@@ -19,3 +19,9 @@ venv/
 backend/venv/
 __pycache__/
 *.pyc
+
+# Firebase Service Account Key
+serviceAccountKey.json
+scripts/serviceAccountKey.json
+service-account.json
+scripts/service-account.json

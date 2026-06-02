@@ -86,14 +86,21 @@ def main():
         print("ERROR: RESEND_API_KEY env variable not set.")
         return
         
-    if not service_account_str:
-        print("ERROR: FIREBASE_SERVICE_ACCOUNT_JSON env variable not set.")
-        return
-
     # 2. Initialize Firebase
     try:
-        service_account_info = json.loads(service_account_str)
-        cred = credentials.Certificate(service_account_info)
+        if service_account_str:
+            service_account_info = json.loads(service_account_str)
+            cred = credentials.Certificate(service_account_info)
+        elif os.path.exists("serviceAccountKey.json"):
+            print("Found local serviceAccountKey.json file. Using it for initialization.")
+            cred = credentials.Certificate("serviceAccountKey.json")
+        elif os.path.exists("scripts/serviceAccountKey.json"):
+            print("Found local scripts/serviceAccountKey.json file. Using it for initialization.")
+            cred = credentials.Certificate("scripts/serviceAccountKey.json")
+        else:
+            print("ERROR: FIREBASE_SERVICE_ACCOUNT_JSON env variable not set and no local serviceAccountKey.json found.")
+            return
+            
         firebase_admin.initialize_app(cred)
     except Exception as e:
         print(f"ERROR: Failed to initialize Firebase SDK: {str(e)}")
