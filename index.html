@@ -353,455 +353,1150 @@
       position: relative;
       width: 270px;
       height: 540px;
-      background: #161b2e;
-      border: 10px solid #161b2e;
-      border-radius: 36px;
-      box-shadow: 0 20px 50px rgba(22, 27, 46, 0.15), 0 0 0 1px rgba(22, 27, 46, 0.05);
+      background: #0f111e;
+      border: 10px solid #1e2238;
+      border-radius: 38px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
       overflow: hidden;
       display: flex;
       flex-direction: column;
+      margin: 0 auto;
     }
 
     .phone-camera-notch {
       position: absolute;
-      top: 6px;
+      top: 0;
       left: 50%;
       transform: translateX(-50%);
-      width: 90px;
-      height: 18px;
-      background: #000;
-      border-radius: 9px;
-      z-index: 10;
+      width: 100px;
+      height: 16px;
+      background: #1e2238;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      z-index: 30;
     }
 
     .phone-screen {
       position: relative;
       width: 100%;
       height: 100%;
-      background: #faf9f6;
+      background: #070913;
       border-radius: 28px;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      box-sizing: border-box;
+    }
+
+    .app-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 12px 6px;
+      background: rgba(7, 9, 19, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      z-index: 10;
+      box-sizing: border-box;
+      height: 54px;
+      flex-shrink: 0;
+    }
+
+    .app-logo {
+      font-size: 14px;
+      font-weight: 800;
+      font-style: italic;
+      background: linear-gradient(135deg, #38bdf8 0%, #a855f7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.5px;
+    }
+
+    .app-header-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .header-icon {
+      width: 15px;
+      height: 15px;
+      color: #94a3b8;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    
+    .header-icon:hover {
+      color: #f43f5e;
+    }
+
+    .header-avatar-ring {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00D2FF, #EE46FF);
+      padding: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 8px rgba(0, 210, 255, 0.35);
+    }
+
+    .header-avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #0f111e;
     }
 
     .phone-view {
       position: absolute;
-      top: 0;
+      top: 54px;
       left: 0;
       width: 100%;
-      height: 100%;
+      height: calc(100% - 106px);
       opacity: 0;
       visibility: hidden;
-      transition: opacity 0.4s ease, visibility 0.4s ease;
-      padding: 36px 16px 20px;
+      transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s;
+      transform: scale(0.96);
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       box-sizing: border-box;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding: 8px 12px;
+    }
+
+    .phone-view::-webkit-scrollbar {
+      display: none;
     }
 
     .phone-view.active {
       opacity: 1;
       visibility: visible;
+      transform: scale(1);
       z-index: 2;
     }
 
-    /* ── Tribe Map / Radar View ── */
-    .map-radar {
+    /* ── EXPLORE / RADAR VIEW ── */
+    .filter-segment {
+      display: flex;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      padding: 2px;
+      margin: 2px auto 8px;
+      width: fit-content;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .filter-pill {
+      font-size: 8px;
+      font-weight: 700;
+      color: #94a3b8;
+      padding: 3.5px 12px;
+      border-radius: 16px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      letter-spacing: 0.5px;
+    }
+
+    .filter-pill.active {
+      background: rgba(255, 255, 255, 0.1);
+      color: #00D2FF;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      text-shadow: 0 0 8px rgba(0, 210, 255, 0.4);
+    }
+
+    .radar-map-container {
       position: relative;
       width: 100%;
-      height: 330px;
-      background: #fbfaf7;
-      border-radius: 20px;
+      height: 220px;
+      background: radial-gradient(circle, #0e1227 0%, #060811 100%);
+      border-radius: 18px;
       overflow: hidden;
-      border: 1px solid rgba(22, 27, 46, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.06);
     }
 
-    .radar-circle {
+    .radar-sweep {
       position: absolute;
-      width: 60px;
-      height: 60px;
-      border: 1px solid rgba(22, 27, 46, 0.04);
+      width: 200%;
+      height: 200%;
+      top: -50%;
+      left: -50%;
+      background: conic-gradient(from 0deg, rgba(0, 210, 255, 0.15) 0deg, rgba(0, 210, 255, 0) 60deg);
+      animation: rotateSweep 5s linear infinite;
+      transform-origin: center;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    @keyframes rotateSweep {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .radar-ring {
+      position: absolute;
+      border: 1px solid rgba(0, 210, 255, 0.08);
       border-radius: 50%;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-    }
-
-    .radar-circle.c2 {
-      width: 130px;
-      height: 130px;
-    }
-
-    .radar-circle.c3 {
-      width: 200px;
-      height: 200px;
-    }
-
-    .radar-circle.c4 {
-      width: 270px;
-      height: 270px;
-    }
-
-    .radar-pulse {
-      position: absolute;
-      width: 60px;
-      height: 60px;
-      background: rgba(22, 27, 46, 0.01);
-      border: 1.5px solid rgba(22, 27, 46, 0.06);
-      border-radius: 50%;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      animation: radarPulse 3s infinite linear;
       pointer-events: none;
     }
+    
+    .radar-ring.r1 { width: 50px; height: 50px; }
+    .radar-ring.r2 { width: 105px; height: 105px; }
+    .radar-ring.r3 { width: 160px; height: 160px; }
+    .radar-ring.r4 { width: 215px; height: 215px; }
 
-    .radar-pulse.delay-1 {
-      animation-delay: 1s;
-    }
-
-    .radar-pulse.delay-2 {
-      animation-delay: 2s;
-    }
-
-    @keyframes radarPulse {
-      0% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 0.8;
-      }
-
-      100% {
-        transform: translate(-50%, -50%) scale(4.5);
-        opacity: 0;
-      }
-    }
-
-    .avatar {
+    .radar-avatar {
       position: absolute;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      animation: bounceGentle 4s infinite ease-in-out;
-    }
-
-    .avatar-img {
-      width: 36px;
-      height: 36px;
+      width: 26px;
+      height: 26px;
       border-radius: 50%;
-      background: #fff;
-      border: 2px solid var(--dark);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 16px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      z-index: 5;
+      transition: all 0.3s ease;
     }
 
-    .avatar-center {
+    .radar-avatar-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #00D2FF;
+      box-shadow: 0 0 8px rgba(0, 210, 255, 0.35);
+    }
+
+    .radar-avatar.center-pin {
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%) !important;
-      animation: none;
-      z-index: 5;
+      transform: translate(-50%, -50%);
+      width: 32px;
+      height: 32px;
+      z-index: 10;
     }
 
-    .avatar-center .avatar-img {
-      width: 44px;
-      height: 44px;
-      background: var(--dark);
-      color: #fff;
+    .radar-avatar.center-pin .radar-avatar-img {
       border-color: #fff;
-      box-shadow: 0 0 15px rgba(22, 27, 46, 0.25);
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
     }
 
-    .avatar-label {
-      font-size: 9px;
-      font-weight: 700;
-      color: var(--dark);
-      margin-top: 4px;
-      background: #fff;
-      padding: 1px 6px;
-      border-radius: 8px;
-      border: 1px solid rgba(22, 27, 46, 0.08);
+    .avatar-glow {
+      position: absolute;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(0, 210, 255, 0.15);
+      animation: centerGlow 2s infinite ease-in-out;
+      z-index: -1;
     }
 
-    .avatar-p1 {
-      top: 12%;
-      left: 15%;
-      animation-delay: 0.2s;
+    @keyframes centerGlow {
+      0%, 100% { transform: scale(1); opacity: 0.4; }
+      50% { transform: scale(1.25); opacity: 0.8; }
     }
 
-    .avatar-p2 {
-      top: 18%;
-      right: 15%;
-      animation-delay: 0.8s;
-    }
-
-    .avatar-p3 {
-      bottom: 12%;
+    .pin-rahul {
+      top: 24%;
       left: 20%;
-      animation-delay: 1.4s;
+      animation: floatGentle 5s infinite ease-in-out;
     }
+    .pin-rahul .radar-avatar-img { border-color: #38bdf8; box-shadow: 0 0 8px rgba(56, 189, 248, 0.35); }
 
-    .avatar-p4 {
-      bottom: 18%;
+    .pin-sneha {
+      bottom: 28%;
       right: 18%;
-      animation-delay: 2s;
+      animation: floatGentle 6s infinite ease-in-out 1s;
     }
+    .pin-sneha .radar-avatar-img { border-color: #ec4899; box-shadow: 0 0 8px rgba(236, 72, 153, 0.35); }
 
-    .interest-badge {
-      font-size: 8.5px;
-      font-weight: 600;
+    .pin-tag {
+      position: absolute;
+      bottom: -11px;
+      font-size: 5.5px;
+      font-weight: 700;
       color: #fff;
-      padding: 2px 6px;
-      border-radius: 20px;
-      margin-top: 4px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      padding: 1px 4.5px;
+      border-radius: 6px;
       white-space: nowrap;
+      text-transform: uppercase;
+    }
+    .tag-fitness { background: #38bdf8; }
+    .tag-music { background: #ec4899; }
+
+    @keyframes floatGentle {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
     }
 
-    .avatar-p1 .interest-badge {
-      background: #ff6b6b;
-    }
-
-    /* Fitness */
-    .avatar-p2 .interest-badge {
-      background: #4dadf7;
-    }
-
-    /* Tech */
-    .avatar-p3 .interest-badge {
-      background: #ff922b;
-    }
-
-    /* Music */
-    .avatar-p4 .interest-badge {
-      background: #a61e4d;
-    }
-
-    /* Art */
-
-    @keyframes bounceGentle {
-
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-6px);
-      }
-    }
-
-    /* ── Events Screen View ── */
-    .event-card-preview {
-      background: #fff;
-      border-radius: 16px;
-      border: 1px solid rgba(22, 27, 46, 0.05);
-      overflow: hidden;
-      box-shadow: 0 8px 24px rgba(22, 27, 46, 0.04);
-      height: 330px;
+    .radar-event-pin {
+      position: absolute;
+      top: 36%;
+      left: 65%;
       display: flex;
       flex-direction: column;
+      align-items: center;
+      z-index: 12;
+      cursor: pointer;
+      animation: bounceMarker 3s infinite ease-in-out;
     }
 
-    .event-image-placeholder {
-      height: 120px;
-      background: linear-gradient(135deg, #f5f2ec 0%, #ede9e1 100%);
+    .event-pin-pulse {
+      position: absolute;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(239, 68, 68, 0.15);
+      border: 1.5px solid rgba(239, 68, 68, 0.4);
+      animation: pinPulse 2s infinite linear;
+      z-index: -1;
+    }
+
+    @keyframes pinPulse {
+      0% { transform: scale(0.8); opacity: 0.9; }
+      100% { transform: scale(2.2); opacity: 0; }
+    }
+
+    .event-pin-icon {
+      width: 24px;
+      height: 24px;
+      background: linear-gradient(135deg, #f43f5e, #ef4444);
+      border: 2px solid #fff;
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 36px;
+      color: #fff;
+      font-size: 10px;
+      box-shadow: 0 0 10px rgba(239, 68, 68, 0.55);
+    }
+
+    .event-pin-label {
+      font-size: 6px;
+      font-weight: 700;
+      color: #fff;
+      margin-top: 3px;
+      background: rgba(15, 17, 30, 0.9);
+      padding: 1px 4.5px;
+      border-radius: 5px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      white-space: nowrap;
+      text-transform: uppercase;
+      letter-spacing: 0.2px;
+    }
+
+    @keyframes bounceMarker {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-3px) scale(1.05); }
+    }
+
+    .locate-btn {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      width: 24px;
+      height: 24px;
+      background: rgba(15, 17, 30, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      transition: all 0.2s;
+    }
+
+    .locate-btn:hover {
+      background: #00D2FF;
+      border-color: #00D2FF;
+    }
+
+    .locate-btn svg {
+      width: 12px;
+      height: 12px;
+      color: #fff;
+    }
+
+    .explore-info {
+      margin-top: 10px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .explore-info span:first-child {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #f3f4f6;
+    }
+
+    .explore-info .highlight-text {
+      font-size: 8.5px;
+      font-weight: 500;
+      color: #00D2FF;
+    }
+
+    /* ── FEED (DISCOVER CARDS) ── */
+    .feed-header-section {
+      margin-bottom: 8px;
+      text-align: left;
+    }
+
+    .feed-header-section h3 {
+      font-size: 12px;
+      font-weight: 700;
+      color: #f3f4f6;
+      margin: 0;
+    }
+
+    .feed-header-section p {
+      font-size: 8px;
+      color: #94a3b8;
+      margin: 1px 0 0 0;
+    }
+
+    .discover-cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .discover-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      backdrop-filter: blur(10px);
+      transition: transform 0.2s;
+    }
+
+    .discover-card:hover {
+      transform: translateY(-2px);
+    }
+
+    .card-image-wrap {
+      position: relative;
+      height: 95px;
+      width: 100%;
+      background: #0f111e;
+    }
+
+    .card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-compat-badge {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      width: 20px;
+      height: 20px;
+      background: rgba(15, 17, 30, 0.85);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .compat-circle-svg {
+      width: 100%;
+      height: 100%;
+      transform: rotate(-90deg);
+    }
+
+    .compat-circle-bg {
+      fill: none;
+      stroke: rgba(255, 255, 255, 0.15);
+      stroke-width: 3.5;
+    }
+
+    .compat-circle {
+      fill: none;
+      stroke: #00D2FF;
+      stroke-dasharray: 0, 100;
+      stroke-width: 3.5;
+      stroke-linecap: round;
+      transition: stroke-dasharray 0.8s ease-in-out;
+    }
+
+    .discover-card:nth-child(2) .compat-circle {
+      stroke: #ec4899;
+    }
+
+    .compat-pct {
+      position: absolute;
+      font-size: 5px;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .card-body {
+      padding: 6px 8px;
       position: relative;
     }
 
-    .event-details {
-      padding: 16px;
+    .card-name {
+      font-size: 9.5px;
+      font-weight: 700;
+      color: #f3f4f6;
+    }
+
+    .card-meta {
+      font-size: 7px;
+      color: #94a3b8;
+      margin-top: 1px;
+    }
+
+    .card-action-btn {
+      position: absolute;
+      bottom: 6px;
+      right: 8px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: none;
+      background: linear-gradient(135deg, #00D2FF, #0076FF);
+      color: #fff;
+      font-size: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 0 6px rgba(0, 210, 255, 0.4);
+    }
+    
+    .card-action-btn.pink-neon {
+      background: linear-gradient(135deg, #ec4899, #d946ef);
+      box-shadow: 0 0 6px rgba(236, 72, 153, 0.4);
+    }
+
+    /* ── VIBES (CHATS VIEW) ── */
+    .chat-search-container {
+      position: relative;
+      margin-bottom: 8px;
+    }
+
+    .chat-search-input {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 5px 8px 5px 22px;
+      color: #fff;
+      font-size: 9px;
+      box-sizing: border-box;
+    }
+
+    .search-input-icon {
+      position: absolute;
+      left: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 10px;
+      height: 10px;
+      color: #64748b;
+    }
+
+    .stories-scroll-container {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 2px 0 6px 0;
+      margin-bottom: 6px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .stories-scroll-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .story-bubble {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .story-avatar-ring {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00D2FF, #3b82f6);
+      padding: 1.5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 6px rgba(0, 210, 255, 0.2);
+    }
+
+    .story-avatar-ring.pink-neon {
+      background: linear-gradient(135deg, #ec4899, #f43f5e);
+    }
+    
+    .story-avatar-ring.green-neon {
+      background: linear-gradient(135deg, #10b981, #059669);
+    }
+
+    .story-avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid #070913;
+    }
+
+    .story-emoji {
+      font-size: 11px;
+    }
+
+    .story-name {
+      font-size: 7px;
+      color: #94a3b8;
+      font-weight: 500;
+    }
+
+    .chats-list-container {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .chat-list-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 8px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .chat-list-item:hover, .chat-list-item.active {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .chat-avatar-wrap {
+      position: relative;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .chat-group-avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f43f5e, #e11d48);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: bold;
+    }
+
+    .chat-user-avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .chat-active-dot {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 7px;
+      height: 7px;
+      background: #10b981;
+      border: 1.5px solid #070913;
+      border-radius: 50%;
+    }
+
+    .chat-item-body {
       flex: 1;
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .chat-title-row {
+      display: flex;
       justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1px;
     }
 
-    .event-tag {
-      align-self: flex-start;
-      font-size: 9.5px;
+    .chat-title {
+      font-size: 9px;
       font-weight: 700;
+      color: #f3f4f6;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .chat-time {
+      font-size: 7px;
+      color: #64748b;
+    }
+
+    .chat-last-msg {
+      font-size: 7.5px;
+      color: #94a3b8;
+      margin: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* ── PROFILE SCREEN ── */
+    .profile-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .profile-header-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .profile-avatar-wrap {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      margin-bottom: 6px;
+    }
+
+    .profile-avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #00D2FF;
+      box-shadow: 0 0 12px rgba(0, 210, 255, 0.4);
+    }
+
+    .profile-status-dot {
+      position: absolute;
+      bottom: 1px;
+      right: 1px;
+      width: 10px;
+      height: 10px;
+      background: #10b981;
+      border: 2px solid #070913;
+      border-radius: 50%;
+    }
+
+    .profile-name {
+      font-size: 13px;
+      font-weight: 800;
+      color: #fff;
+      margin: 0;
+    }
+
+    .profile-handle {
+      font-size: 8px;
+      color: #00D2FF;
+      margin-top: 1px;
+      font-weight: 500;
+    }
+
+    .profile-stats-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      padding: 5px 10px;
+      margin-bottom: 8px;
+      box-sizing: border-box;
+    }
+
+    .stat-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+    }
+
+    .stat-num {
+      font-size: 10px;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .stat-label {
+      font-size: 6.5px;
+      color: #94a3b8;
       text-transform: uppercase;
-      color: #ff922b;
-      letter-spacing: 0.5px;
-      margin-bottom: 2px;
+      font-weight: 600;
+      margin-top: 1px;
     }
 
-    .event-details h5 {
-      font-size: 13.5px;
+    .stat-divider {
+      width: 1px;
+      height: 16px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .profile-bio-text {
+      font-size: 8.5px;
+      color: #cbd5e1;
+      line-height: 1.4;
+      text-align: center;
+      margin: 0 0 8px 0;
+    }
+
+    .profile-actions-row {
+      display: flex;
+      gap: 6px;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .profile-primary-btn {
+      flex: 1;
+      padding: 5px;
+      background: linear-gradient(135deg, #00D2FF 0%, #a855f7 100%);
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 8.5px;
       font-weight: 700;
-      color: var(--dark);
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 210, 255, 0.2);
+    }
+
+    .profile-share-btn {
+      width: 22px;
+      height: 22px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .profile-share-btn svg {
+      width: 10px;
+      height: 10px;
+      color: #fff;
+    }
+
+    .profile-tags-section {
+      width: 100%;
+      text-align: left;
+    }
+
+    .profile-tags-section h5 {
+      font-size: 9px;
+      font-weight: 700;
+      color: #fff;
       margin: 0 0 6px 0;
+    }
+
+    .profile-interest-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .profile-interest-tag {
+      font-size: 7.5px;
+      font-weight: 600;
+      color: #94a3b8;
+      padding: 3.5px 7px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .profile-interest-tag.active {
+      color: #fff;
+      background: rgba(0, 210, 255, 0.12);
+      border-color: rgba(0, 210, 255, 0.35);
+      box-shadow: 0 0 8px rgba(0, 210, 255, 0.15);
+    }
+
+    /* ── BOTTOM NAV BAR ── */
+    .phone-bottom-nav {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 52px;
+      background: rgba(7, 9, 19, 0.95);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      z-index: 20;
+      box-sizing: border-box;
+      padding-bottom: 2px;
+    }
+
+    .nav-tab {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      cursor: pointer;
+      color: #64748b;
+      transition: all 0.2s;
+      flex: 1;
+      position: relative;
+    }
+
+    .nav-tab.active {
+      color: #00D2FF;
+    }
+
+    .nav-tab-icon {
+      width: 15px;
+      height: 15px;
+      stroke-width: 2px;
+    }
+
+    .nav-tab-label {
+      font-size: 7px;
+      font-weight: 600;
+    }
+
+    .vibes-badge-dot {
+      position: absolute;
+      top: 1px;
+      right: 16px;
+      width: 5px;
+      height: 5px;
+      background: #f43f5e;
+      border-radius: 50%;
+      box-shadow: 0 0 5px rgba(244, 63, 94, 0.6);
+    }
+
+    .nav-tab-plus {
+      flex: 0 0 32px;
+      height: 32px;
+      margin-bottom: 6px;
+      z-index: 22;
+    }
+
+    .plus-btn-inner {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #00D2FF 0%, #9D4EDD 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 500;
+      box-shadow: 0 3px 8px rgba(0, 210, 255, 0.4);
+      transition: transform 0.2s;
+    }
+
+    .nav-tab-plus:hover .plus-btn-inner {
+      transform: scale(1.1);
+    }
+
+    /* ── BOTTOM SHEET (SLIDE UP MODAL) ── */
+    .event-bottom-sheet {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 240px;
+      background: #0d0f1e;
+      border-top: 1.5px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px 20px 0 0;
+      z-index: 40;
+      transform: translateY(100%);
+      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+      box-sizing: border-box;
+      padding: 8px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .event-bottom-sheet.active {
+      transform: translateY(0);
+    }
+
+    .sheet-drag-handle {
+      width: 32px;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 2px;
+      margin: 0 auto 8px;
+      cursor: pointer;
+    }
+
+    .sheet-close-btn {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      font-size: 15px;
+      color: #94a3b8;
+      cursor: pointer;
+      transition: color 0.2s;
+      line-height: 1;
+    }
+
+    .sheet-close-btn:hover {
+      color: #fff;
+    }
+
+    .sheet-content {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1;
+    }
+
+    .sheet-tag-row {
+      display: flex;
+      gap: 6px;
+    }
+
+    .sheet-badge-special {
+      font-size: 6px;
+      font-weight: 800;
+      background: rgba(239, 68, 68, 0.15);
+      color: #f43f5e;
+      padding: 2px 6px;
+      border-radius: 4px;
+      border: 1px solid rgba(244, 63, 94, 0.2);
+      letter-spacing: 0.2px;
+    }
+
+    .sheet-badge-private {
+      font-size: 6px;
+      font-weight: 800;
+      background: rgba(255, 255, 255, 0.05);
+      color: #94a3b8;
+      padding: 2px 6px;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .sheet-event-title {
+      font-size: 11px;
+      font-weight: 800;
+      color: #fff;
+      margin: 0;
       line-height: 1.3;
     }
 
-    .event-time,
-    .event-loc {
-      font-size: 10.5px;
-      color: #6b7280;
-      margin: 0 0 4px 0;
+    .sheet-host-row {
       display: flex;
       align-items: center;
-      gap: 4px;
+      gap: 8px;
     }
 
-    .attendees-row {
-      display: flex;
-      align-items: center;
-      margin: 8px 0;
-    }
-
-    .avatar-mini {
+    .sheet-host-avatar {
       width: 20px;
       height: 20px;
       border-radius: 50%;
-      background: #fff;
-      border: 1.5px solid #fff;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 9px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-      margin-right: -6px;
+      object-fit: cover;
+      border: 1px solid #00D2FF;
     }
 
-    .attendee-count {
-      font-size: 9.5px;
-      color: #6b7280;
-      font-weight: 500;
-      margin-left: 12px;
+    .sheet-host-info {
+      display: flex;
+      flex-direction: column;
     }
 
-    .join-btn-preview {
-      width: 100%;
-      padding: 8px;
-      background: var(--dark);
+    .sheet-host-name {
+      font-size: 7.5px;
+      font-weight: 700;
       color: #fff;
+    }
+
+    .sheet-host-karma {
+      font-size: 6.5px;
+      color: #00D2FF;
+      font-weight: 600;
+    }
+
+    .sheet-event-desc {
+      font-size: 8px;
+      color: #cbd5e1;
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    .sheet-actions-row {
+      display: flex;
+      gap: 8px;
+      margin-top: auto;
+    }
+
+    .sheet-msg-host-btn {
+      flex: 1;
+      padding: 6px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      color: #fff;
+      font-size: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .sheet-msg-host-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .sheet-open-chat-btn {
+      flex: 1.2;
+      padding: 6px;
+      background: linear-gradient(135deg, #00D2FF 0%, #0076FF 100%);
       border: none;
       border-radius: 8px;
-      font-size: 11px;
-      font-weight: 600;
+      color: #fff;
+      font-size: 8px;
+      font-weight: 700;
       cursor: pointer;
-      transition: opacity 0.2s;
+      box-shadow: 0 4px 10px rgba(0, 210, 255, 0.3);
+      transition: all 0.2s;
     }
 
-    .join-btn-preview:hover {
+    .sheet-open-chat-btn:hover {
       opacity: 0.9;
-    }
-
-    /* ── Search Screen View ── */
-    .search-view-container {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      height: 330px;
-    }
-
-    .search-bar-preview {
-      background: #fff;
-      border: 1px solid rgba(22, 27, 46, 0.06);
-      border-radius: 12px;
-      padding: 8px 12px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.01);
-    }
-
-    .search-icon-mini {
-      font-size: 11px;
-      color: #6b7280;
-    }
-
-    .typing-text {
-      font-size: 11px;
-      color: var(--dark);
-      font-weight: 500;
-    }
-
-    .typing-cursor {
-      font-size: 11px;
-      color: var(--dark);
-      font-weight: 300;
-      animation: blinkCursor 0.8s infinite;
-    }
-
-    @keyframes blinkCursor {
-
-      0%,
-      100% {
-        opacity: 1;
-      }
-
-      50% {
-        opacity: 0;
-      }
-    }
-
-    .search-results-preview {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .result-item {
-      background: #fff;
-      border-radius: 12px;
-      border: 1px solid rgba(22, 27, 46, 0.03);
-      padding: 10px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      box-shadow: 0 4px 12px rgba(22, 27, 46, 0.01);
-    }
-
-    .result-icon {
-      width: 28px;
-      height: 28px;
-      background: #fdfcfa;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      border: 1px solid rgba(22, 27, 46, 0.04);
-    }
-
-    .result-info h6 {
-      font-size: 11.5px;
-      font-weight: 700;
-      color: var(--dark);
-      margin: 0 0 2px 0;
-    }
-
-    .result-info p {
-      font-size: 9.5px;
-      color: #6b7280;
-      margin: 0;
-    }
-
-    .view-header {
-      text-align: center;
-      margin-top: 14px;
-    }
-
-    .view-header h4 {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--dark);
-      margin: 0 0 2px 0;
-    }
-
-    .view-header p {
-      font-size: 10px;
-      color: #6b7280;
-      margin: 0;
     }
 
     /* ── INTERESTS SECTION ── */
@@ -1227,100 +1922,339 @@
           <div class="phone-camera-notch"></div>
           <div class="phone-screen">
 
-            <!-- Screen 1: Tribe (Map & People Around) -->
-            <div class="phone-view active" id="view-tribe">
-              <div class="map-radar">
-                <div class="radar-circle c1"></div>
-                <div class="radar-circle c2"></div>
-                <div class="radar-circle c3"></div>
-                <div class="radar-circle c4"></div>
-                <div class="radar-pulse"></div>
-                <div class="radar-pulse delay-1"></div>
-                <div class="radar-pulse delay-2"></div>
+            <!-- Global header visible inside the app -->
+            <div class="app-header">
+              <span class="app-logo">conXtion</span>
+              <div class="app-header-right">
+                <svg class="header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+                <div class="header-avatar-ring">
+                  <img src="avatar_dev.png" alt="Dev" class="header-avatar">
+                </div>
+              </div>
+            </div>
 
+            <!-- VIEW 1: EXPLORE (Radar View) -->
+            <div class="phone-view active" id="view-explore">
+              <!-- Filter Segment Control -->
+              <div class="filter-segment">
+                <div class="filter-pill active" id="filter-people">PEOPLE</div>
+                <div class="filter-pill" id="filter-events">EVENTS</div>
+              </div>
+
+              <!-- Radar Map Container -->
+              <div class="radar-map-container">
+                <div class="radar-sweep"></div>
+                <div class="radar-ring r1"></div>
+                <div class="radar-ring r2"></div>
+                <div class="radar-ring r3"></div>
+                <div class="radar-ring r4"></div>
+                
                 <!-- Central Avatar (You) -->
-                <div class="avatar avatar-center">
-                  <div class="avatar-img">👤</div>
-                  <div class="avatar-label">You</div>
+                <div class="radar-avatar center-pin">
+                  <div class="avatar-glow"></div>
+                  <img src="avatar_dev.png" class="radar-avatar-img" alt="You">
                 </div>
 
-                <!-- Person 1: Fitness -->
-                <div class="avatar avatar-p1">
-                  <div class="avatar-img">🏃‍♂️</div>
-                  <div class="interest-badge">Fitness</div>
-                </div>
-
-                <!-- Person 2: Tech -->
-                <div class="avatar avatar-p2">
-                  <div class="avatar-img">👩‍💻</div>
-                  <div class="interest-badge">Tech</div>
-                </div>
-
-                <!-- Person 3: Music -->
-                <div class="avatar avatar-p3">
-                  <div class="avatar-img">🎸</div>
-                  <div class="interest-badge">Music</div>
-                </div>
-
-                <!-- Person 4: Art -->
-                <div class="avatar avatar-p4">
-                  <div class="avatar-img">🎨</div>
-                  <div class="interest-badge">Art</div>
-                </div>
-              </div>
-              <div class="view-header">
-                <h4>People Nearby</h4>
-                <p>4 new matches with shared interests</p>
-              </div>
-            </div>
-
-            <!-- Screen 2: Events -->
-            <div class="phone-view" id="view-events">
-              <div class="event-card-preview">
-                <div class="event-image-placeholder">🌅</div>
-                <div class="event-details">
-                  <div>
-                    <span class="event-tag">Music</span>
-                    <h5>Sunset Acoustics Session</h5>
-                    <p class="event-time">🗓️ Today at 6:30 PM</p>
-                    <p class="event-loc">📍 Central Park Amphitheater</p>
+                <!-- People Pins (visible when filter-people is active) -->
+                <div class="people-pins-group">
+                  <!-- Rahul Pin -->
+                  <div class="radar-avatar pin-rahul">
+                    <img src="avatar_rahul.png" class="radar-avatar-img" alt="Rahul">
+                    <span class="pin-tag tag-fitness">Fitness</span>
                   </div>
-                  <div>
-                    <div class="attendees-row">
-                      <span class="avatar-mini">👤</span>
-                      <span class="avatar-mini">👩‍💻</span>
-                      <span class="avatar-mini">🎸</span>
-                      <span class="attendee-count">+12 attending</span>
-                    </div>
-                    <button class="join-btn-preview">Join Event</button>
+                  <!-- Sneha Pin -->
+                  <div class="radar-avatar pin-sneha">
+                    <img src="avatar_sneha.png" class="radar-avatar-img" alt="Sneha">
+                    <span class="pin-tag tag-music">Music</span>
                   </div>
                 </div>
+
+                <!-- Event Pins (visible when filter-events is active) -->
+                <div class="events-pins-group" style="display: none;">
+                  <!-- Regular Practice Pin -->
+                  <div class="radar-event-pin pin-practice" id="practice-event-pin">
+                    <div class="event-pin-pulse"></div>
+                    <div class="event-pin-icon">⚡</div>
+                    <span class="event-pin-label">Practice On Weekends</span>
+                  </div>
+                </div>
+
+                <!-- Locate Button -->
+                <button class="locate-btn" id="locate-btn-action" title="Locate me">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                  </svg>
+                </button>
+              </div>
+
+              <!-- Map Header Info -->
+              <div class="explore-info">
+                <span id="explore-info-title">People Nearby</span>
+                <span id="explore-info-subtitle" class="highlight-text">4 matches with shared interests</span>
               </div>
             </div>
 
-            <!-- Screen 3: Search -->
-            <div class="phone-view" id="view-search">
-              <div class="search-view-container">
-                <div class="search-bar-preview">
-                  <span class="search-icon-mini">🔍</span>
-                  <span class="typing-text">tennis partners</span>
-                  <span class="typing-cursor">|</span>
+            <!-- VIEW 2: FEED (Discover Cards) -->
+            <div class="phone-view" id="view-feed">
+              <div class="feed-header-section">
+                <h3>Discover Cards</h3>
+                <p>Compatible partners nearby</p>
+              </div>
+              <div class="discover-cards-grid">
+                <!-- Card 1: Rahul -->
+                <div class="discover-card">
+                  <div class="card-image-wrap">
+                    <img src="avatar_rahul.png" class="card-img" alt="Rahul">
+                    <div class="card-compat-badge">
+                      <svg class="compat-circle-svg" viewBox="0 0 36 36">
+                        <path class="compat-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <path class="compat-circle" stroke-dasharray="95, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                      </svg>
+                      <span class="compat-pct">95%</span>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <span class="card-name">Rahul, 18</span>
+                    <div class="card-meta">2.6 km away • 4715 Karma</div>
+                    <button class="card-action-btn">⚡</button>
+                  </div>
                 </div>
-                <div class="search-results-preview">
-                  <div class="result-item">
-                    <span class="result-icon">🎾</span>
-                    <div class="result-info">
-                      <h6>Midtown Tennis Club</h6>
-                      <p>2.4 miles away • 14 members</p>
+
+                <!-- Card 2: Sneha -->
+                <div class="discover-card">
+                  <div class="card-image-wrap">
+                    <img src="avatar_sneha.png" class="card-img" alt="Sneha">
+                    <div class="card-compat-badge">
+                      <svg class="compat-circle-svg" viewBox="0 0 36 36">
+                        <path class="compat-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <path class="compat-circle" stroke-dasharray="88, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                      </svg>
+                      <span class="compat-pct">88%</span>
                     </div>
                   </div>
-                  <div class="result-item">
-                    <span class="result-icon">🎾</span>
-                    <div class="result-info">
-                      <h6>Casual Singles Tennis</h6>
-                      <p>5.1 miles away • 8 members</p>
-                    </div>
+                  <div class="card-body">
+                    <span class="card-name">Sneha, 26</span>
+                    <div class="card-meta">4.2 km away • 896 Karma</div>
+                    <button class="card-action-btn pink-neon">⚡</button>
                   </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- VIEW 3: VIBES (Chats) -->
+            <div class="phone-view" id="view-vibes">
+              <div class="chat-search-container">
+                <svg class="search-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" class="chat-search-input" placeholder="Search chats..." readonly value="Practice">
+              </div>
+
+              <!-- Stories Row -->
+              <div class="stories-scroll-container">
+                <div class="story-bubble">
+                  <div class="story-avatar-ring">
+                    <img src="avatar_rahul.png" class="story-avatar" alt="Rahul">
+                  </div>
+                  <span class="story-name">Rahul</span>
+                </div>
+                <div class="story-bubble">
+                  <div class="story-avatar-ring pink-neon">
+                    <img src="avatar_sneha.png" class="story-avatar" alt="Sneha">
+                  </div>
+                  <span class="story-name">Sneha</span>
+                </div>
+                <div class="story-bubble">
+                  <div class="story-avatar-ring green-neon">
+                    <span class="story-emoji">🥁</span>
+                  </div>
+                  <span class="story-name">Arjun</span>
+                </div>
+                <div class="story-bubble">
+                  <div class="story-avatar-ring">
+                    <span class="story-emoji">🏃</span>
+                  </div>
+                  <span class="story-name">Varun</span>
+                </div>
+              </div>
+
+              <!-- Chats List -->
+              <div class="chats-list-container">
+                <!-- Group Chat -->
+                <div class="chat-list-item active" id="chat-item-practice">
+                  <div class="chat-avatar-wrap">
+                    <div class="chat-group-avatar">⚡</div>
+                    <div class="chat-active-dot"></div>
+                  </div>
+                  <div class="chat-item-body">
+                    <div class="chat-title-row">
+                      <span class="chat-title">Practice On Weekends</span>
+                      <span class="chat-time">5m</span>
+                    </div>
+                    <p class="chat-last-msg">Dev: Let's jam at 4 PM!</p>
+                  </div>
+                </div>
+
+                <!-- Chat 2 -->
+                <div class="chat-list-item">
+                  <div class="chat-avatar-wrap">
+                    <img src="avatar_rahul.png" class="chat-user-avatar" alt="Rahul">
+                  </div>
+                  <div class="chat-item-body">
+                    <div class="chat-title-row">
+                      <span class="chat-title">Rahul</span>
+                      <span class="chat-time">2h</span>
+                    </div>
+                    <p class="chat-last-msg">Are you up for running tomorrow?</p>
+                  </div>
+                </div>
+
+                <!-- Chat 3 -->
+                <div class="chat-list-item">
+                  <div class="chat-avatar-wrap">
+                    <img src="avatar_sneha.png" class="chat-user-avatar" alt="Sneha">
+                  </div>
+                  <div class="chat-item-body">
+                    <div class="chat-title-row">
+                      <span class="chat-title">Sneha</span>
+                      <span class="chat-time">1d</span>
+                    </div>
+                    <p class="chat-last-msg">Awesome track recommendations!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- VIEW 4: PROFILE -->
+            <div class="phone-view" id="view-profile">
+              <div class="profile-container">
+                <!-- Main Bio Section -->
+                <div class="profile-header-card">
+                  <div class="profile-avatar-wrap">
+                    <img src="avatar_dev.png" class="profile-avatar" alt="Dev">
+                    <span class="profile-status-dot"></span>
+                  </div>
+                  <h4 class="profile-name">Dev Gaur</h4>
+                  <span class="profile-handle">@devgaur_477</span>
+                </div>
+
+                <!-- Stats Section -->
+                <div class="profile-stats-row">
+                  <div class="stat-box">
+                    <span class="stat-num">1.2K</span>
+                    <span class="stat-label">Followers</span>
+                  </div>
+                  <div class="stat-divider"></div>
+                  <div class="stat-box">
+                    <span class="stat-num">348</span>
+                    <span class="stat-label">Connections</span>
+                  </div>
+                  <div class="stat-divider"></div>
+                  <div class="stat-box">
+                    <span class="stat-num">4.7K</span>
+                    <span class="stat-label">Karma</span>
+                  </div>
+                </div>
+
+                <!-- Bio description -->
+                <p class="profile-bio-text">
+                  Drummer, runner, and fitness enthusiast. Creating beats &amp; running miles. Let's connect!
+                </p>
+
+                <!-- Actions -->
+                <div class="profile-actions-row">
+                  <button class="profile-primary-btn">Edit Profile</button>
+                  <button class="profile-share-btn" title="Share profile">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="18" cy="5" r="3"></circle>
+                      <circle cx="6" cy="12" r="3"></circle>
+                      <circle cx="18" cy="19" r="3"></circle>
+                      <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                      <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                    </svg>
+                  </button>
+                </div>
+
+                <!-- Interest Tags -->
+                <div class="profile-tags-section">
+                  <h5>My Interests</h5>
+                  <div class="profile-interest-tags">
+                    <span class="profile-interest-tag active">🏃 Running</span>
+                    <span class="profile-interest-tag active">💪 Gym</span>
+                    <span class="profile-interest-tag">🎸 Guitar</span>
+                    <span class="profile-interest-tag">🎤 Singing</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- BOTTOM NAVIGATION BAR -->
+            <div class="phone-bottom-nav">
+              <div class="nav-tab active" data-tab="explore" id="tab-explore">
+                <svg class="nav-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                </svg>
+                <span class="nav-tab-label">Explore</span>
+              </div>
+              <div class="nav-tab" data-tab="feed" id="tab-feed">
+                <svg class="nav-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="3" y1="9" x2="21" y2="9"></line>
+                  <line x1="9" y1="21" x2="9" y2="9"></line>
+                </svg>
+                <span class="nav-tab-label">Feed</span>
+              </div>
+              <div class="nav-tab nav-tab-plus" id="tab-plus" title="Add event">
+                <div class="plus-btn-inner">+</div>
+              </div>
+              <div class="nav-tab" data-tab="vibes" id="tab-vibes">
+                <svg class="nav-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <span class="nav-tab-label">Vibes</span>
+                <span class="vibes-badge-dot"></span>
+              </div>
+              <div class="nav-tab" data-tab="profile" id="tab-profile">
+                <svg class="nav-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <span class="nav-tab-label">Profile</span>
+              </div>
+            </div>
+
+            <!-- EVENT DETAIL BOTTOM SHEET (inspired by Slide 1) -->
+            <div class="event-bottom-sheet" id="event-detail-sheet">
+              <div class="sheet-drag-handle"></div>
+              <div class="sheet-close-btn" id="sheet-close-btn">&times;</div>
+              <div class="sheet-content">
+                <div class="sheet-tag-row">
+                  <span class="sheet-badge-special">SPECIAL EVENTS</span>
+                  <span class="sheet-badge-private">🔒 Private</span>
+                </div>
+                <h4 class="sheet-event-title">Regular Practice On Weekends</h4>
+                <div class="sheet-host-row">
+                  <img src="avatar_dev.png" class="sheet-host-avatar" alt="Dev">
+                  <div class="sheet-host-info">
+                    <span class="sheet-host-name">Dev (Host)</span>
+                    <span class="sheet-host-karma">⚡ 60 Karma</span>
+                  </div>
+                </div>
+                <p class="sheet-event-desc">
+                  Weekend practice session for musicians and enthusiasts. Bring instruments or high energy!
+                </p>
+                <div class="sheet-actions-row">
+                  <button class="sheet-msg-host-btn" id="btn-msg-host">MESSAGE HOST</button>
+                  <button class="sheet-open-chat-btn" id="btn-open-chat">OPEN CHAT</button>
                 </div>
               </div>
             </div>
@@ -1596,24 +2530,150 @@
     // Features Interactive Phone Preview
     const featureCards = document.querySelectorAll('.feature-card');
     const phoneViews = document.querySelectorAll('.phone-view');
+    const navTabs = document.querySelectorAll('.nav-tab');
+    const eventDetailSheet = document.getElementById('event-detail-sheet');
+    const filterPeople = document.getElementById('filter-people');
+    const filterEvents = document.getElementById('filter-events');
+    const peoplePins = document.querySelector('.people-pins-group');
+    const eventPins = document.querySelector('.events-pins-group');
+    const practiceEventPin = document.getElementById('practice-event-pin');
+    const sheetCloseBtn = document.getElementById('sheet-close-btn');
 
+    // Helper to clear active states on phone views and nav tabs
+    const deactivateAllViews = () => {
+      phoneViews.forEach(v => v.classList.remove('active'));
+      navTabs.forEach(t => t.classList.remove('active'));
+    };
+
+    // Helper to switch to a specific tab
+    const selectTab = (tabName) => {
+      deactivateAllViews();
+      const targetView = document.getElementById(`view-${tabName}`);
+      const targetTab = document.getElementById(`tab-${tabName}`);
+      if (targetView) targetView.classList.add('active');
+      if (targetTab) targetTab.classList.add('active');
+      
+      // Update left feature card highlights based on selected tab
+      featureCards.forEach(c => c.classList.remove('active'));
+      if (tabName === 'explore' || tabName === 'feed') {
+        document.getElementById('feature-tribe')?.classList.add('active');
+      } else if (tabName === 'vibes') {
+        document.getElementById('feature-search')?.classList.add('active');
+      }
+    };
+
+    // Bottom Tab Bar Click Handlers
+    navTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const tabName = tab.getAttribute('data-tab');
+        if (tabName) {
+          selectTab(tabName);
+          // Close sheet when switching tabs
+          eventDetailSheet?.classList.remove('active');
+        }
+      });
+    });
+
+    // Special Plus Button Click Handler
+    document.getElementById('tab-plus')?.addEventListener('click', () => {
+      // Toggle the event detail sheet as a showcase
+      eventDetailSheet?.classList.toggle('active');
+    });
+
+    // Radar Filter Toggle (PEOPLE vs EVENTS)
+    const setRadarFilter = (filterType) => {
+      if (filterType === 'people') {
+        filterPeople?.classList.add('active');
+        filterEvents?.classList.remove('active');
+        if (peoplePins) peoplePins.style.display = 'block';
+        if (eventPins) eventPins.style.display = 'none';
+        document.getElementById('explore-info-title').textContent = 'People Nearby';
+        document.getElementById('explore-info-subtitle').textContent = '4 matches with shared interests';
+      } else {
+        filterPeople?.classList.remove('active');
+        filterEvents?.classList.add('active');
+        if (peoplePins) peoplePins.style.display = 'none';
+        if (eventPins) eventPins.style.display = 'block';
+        document.getElementById('explore-info-title').textContent = 'Events Nearby';
+        document.getElementById('explore-info-subtitle').textContent = '1 special event active now';
+      }
+    };
+
+    filterPeople?.addEventListener('click', () => setRadarFilter('people'));
+    filterEvents?.addEventListener('click', () => setRadarFilter('events'));
+
+    // Open Bottom Sheet when Event Pin clicked
+    practiceEventPin?.addEventListener('click', () => {
+      eventDetailSheet?.classList.add('active');
+    });
+
+    // Close Bottom Sheet
+    sheetCloseBtn?.addEventListener('click', () => {
+      eventDetailSheet?.classList.remove('active');
+    });
+
+    // Left Feature Card Hover/Click Handlers
     featureCards.forEach(card => {
-      const handleActiveState = () => {
+      const handleFeatureCardTrigger = () => {
         const targetFeature = card.getAttribute('data-feature');
-
+        
         featureCards.forEach(c => c.classList.remove('active'));
         card.classList.add('active');
 
-        phoneViews.forEach(v => {
-          v.classList.remove('active');
-          if (v.id === `view-${targetFeature}`) {
-            v.classList.add('active');
-          }
-        });
+        if (targetFeature === 'tribe') {
+          selectTab('explore');
+          setRadarFilter('people');
+          eventDetailSheet?.classList.remove('active');
+        } else if (targetFeature === 'events') {
+          selectTab('explore');
+          setRadarFilter('events');
+          // Automatically slide up the sheet to showcase events
+          setTimeout(() => {
+            eventDetailSheet?.classList.add('active');
+          }, 300);
+        } else if (targetFeature === 'search') {
+          selectTab('vibes');
+          eventDetailSheet?.classList.remove('active');
+        }
       };
 
-      card.addEventListener('mouseenter', handleActiveState);
-      card.addEventListener('click', handleActiveState);
+      card.addEventListener('mouseenter', handleFeatureCardTrigger);
+      card.addEventListener('click', handleFeatureCardTrigger);
+    });
+
+    // Profile Interactive Interest Tags
+    const profileTags = document.querySelectorAll('.profile-interest-tag');
+    profileTags.forEach(tag => {
+      tag.addEventListener('click', () => {
+        tag.classList.toggle('active');
+      });
+    });
+
+    // Locate Button Action (Pulse/glow highlight)
+    document.getElementById('locate-btn-action')?.addEventListener('click', () => {
+      const centerPin = document.querySelector('.center-pin');
+      if (centerPin) {
+        centerPin.style.transform = 'translate(-50%, -50%) scale(1.2)';
+        setTimeout(() => {
+          centerPin.style.transform = 'translate(-50%, -50%) scale(1)';
+        }, 300);
+      }
+    });
+
+    // Action button clicks inside sheets/cards
+    document.getElementById('btn-msg-host')?.addEventListener('click', () => {
+      alert('Messaging Host Dev...');
+    });
+    
+    document.getElementById('btn-open-chat')?.addEventListener('click', () => {
+      eventDetailSheet?.classList.remove('active');
+      selectTab('vibes');
+      // Highlight the practice chat
+      const chatItem = document.getElementById('chat-item-practice');
+      if (chatItem) {
+        chatItem.classList.add('active');
+        chatItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
     });
   </script>
 </body>
