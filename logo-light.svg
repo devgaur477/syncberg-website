@@ -1,0 +1,16 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="creamGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f3ebd9" />
+      <stop offset="100%" stop-color="#d1c4a9" />
+    </linearGradient>
+    <linearGradient id="lightGrad" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#cbd5e1" />
+    </linearGradient>
+  </defs>
+  <!-- Right Pin (Light Silver/White) -->
+  <path d="M 62 70 C 50 58 42 52 42 42 C 42 31 51 22 62 22 C 73 22 82 31 82 42 C 82 52 74 58 62 70 Z M 62 33 A 9 9 0 1 0 62 51 A 9 9 0 1 0 62 33 Z" fill="url(#lightGrad)" fill-rule="evenodd" />
+  <!-- Left Pin (Cream) -->
+  <path d="M 38 70 C 26 58 18 52 18 42 C 18 31 27 22 38 22 C 49 22 58 31 58 42 C 58 52 50 58 38 70 Z M 38 33 A 9 9 0 1 0 38 51 A 9 9 0 1 0 38 33 Z" fill="url(#creamGrad)" fill-rule="evenodd" />
+</svg>
