@@ -1866,6 +1866,95 @@
       transform: translateY(-1px);
     }
 
+    .interests-showcase {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      max-width: 900px;
+      margin: 0 auto 52px;
+      text-align: left;
+    }
+
+    .showcase-card {
+      background: #ffffff;
+      border: 1px solid #eceae5;
+      border-radius: 24px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 12px rgba(22, 27, 46, 0.02);
+    }
+
+    .showcase-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 36px rgba(22, 27, 46, 0.08);
+    }
+
+    .showcase-image-wrap {
+      position: relative;
+      height: 240px;
+      overflow: hidden;
+      background: #f5f2ec;
+    }
+
+    .showcase-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .showcase-card:hover .showcase-img {
+      transform: scale(1.04);
+    }
+
+    .showcase-body {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .showcase-badge {
+      align-self: flex-start;
+      background: var(--cream-badge);
+      color: #5a5040;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 999px;
+      border: 1px solid #d9d3c7;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .showcase-body h3 {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--dark);
+      margin: 0;
+      letter-spacing: -0.4px;
+    }
+
+    .showcase-body p {
+      font-size: 14px;
+      color: #5a6070;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .interests-showcase {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        max-width: 460px;
+      }
+      .showcase-image-wrap {
+        height: 200px;
+      }
+    }
+
     /* ── BETA CTA SECTION ── */
     .beta-section {
       background: #ffffff;
@@ -2718,6 +2807,30 @@
       <span class="tag"><span class="tag-emoji">📚</span> Books</span>
       <span class="tag"><span class="tag-emoji">🎭</span> Entertainment</span>
       <span class="tag"><span class="tag-emoji">🏡</span> Lifestyle</span>
+    </div>
+
+    <!-- Pictures of Interests Showcase -->
+    <div class="interests-showcase">
+      <div class="showcase-card">
+        <div class="showcase-image-wrap">
+          <img src="meetup_chatting.png" alt="Meetups & Connections" class="showcase-img">
+        </div>
+        <div class="showcase-body">
+          <span class="showcase-badge">☕ Meetups</span>
+          <h3>Form Real Connections</h3>
+          <p>Find your people over cozy coffee chats, casual group dinners, and deep late-night conversations in a relaxed setting.</p>
+        </div>
+      </div>
+      <div class="showcase-card">
+        <div class="showcase-image-wrap">
+          <img src="sports_pickleball.png" alt="Pickleball & Sports" class="showcase-img">
+        </div>
+        <div class="showcase-body">
+          <span class="showcase-badge">🏓 Sports</span>
+          <h3>Play &amp; Stay Active</h3>
+          <p>Host weekend pickleball matchups, join neighborhood running clubs, or gather a team for casual outdoor game days.</p>
+        </div>
+      </div>
     </div>
 
     <a href="#beta" class="interests-cta" id="explore-interests-btn">Explore All Interests</a>
