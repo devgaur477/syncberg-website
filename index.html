@@ -63,16 +63,15 @@
     .nav-logo-icon {
       width: 32px;
       height: 32px;
-      background: var(--dark);
-      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
     .nav-logo-icon svg {
-      width: 18px;
-      height: 18px;
+      width: 32px;
+      height: 32px;
+      filter: drop-shadow(0px 1px 2px rgba(22, 27, 46, 0.15));
     }
 
     .nav-logo-text {
@@ -993,16 +992,14 @@
     .footer-logo-icon {
       width: 28px;
       height: 28px;
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 7px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
     .footer-logo-icon svg {
-      width: 16px;
-      height: 16px;
+      width: 28px;
+      height: 28px;
     }
 
     .footer-logo-text {
@@ -1131,12 +1128,23 @@
   <nav>
     <a href="#hero" class="nav-logo" id="logo-link">
       <div class="nav-logo-icon">
-        <!-- rounded square icon with inner dot/shape like in screenshot -->
-        <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="2" y="2" width="14" height="14" rx="3" fill="white" opacity="0.9" />
-          <rect x="5" y="5" width="4" height="4" rx="1" fill="#161b2e" />
-          <rect x="9.5" y="5" width="3.5" height="3.5" rx="1" fill="#161b2e" />
-          <rect x="5" y="9.5" width="8" height="3.5" rx="1" fill="#161b2e" />
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="navCreamGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#f3ebd9" />
+              <stop offset="100%" stop-color="#d1c4a9" />
+            </linearGradient>
+            <linearGradient id="navDarkGrad" x1="100%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#353c4d" />
+              <stop offset="100%" stop-color="#1a1e26" />
+            </linearGradient>
+          </defs>
+          <!-- Right Pin (Dark) -->
+          <path d="M 62 70 C 50 58 42 52 42 42 C 42 31 51 22 62 22 C 73 22 82 31 82 42 C 82 52 74 58 62 70 Z M 62 33 A 9 9 0 1 0 62 51 A 9 9 0 1 0 62 33 Z" 
+                fill="url(#navDarkGrad)" fill-rule="evenodd" />
+          <!-- Left Pin (Cream) -->
+          <path d="M 38 70 C 26 58 18 52 18 42 C 18 31 27 22 38 22 C 49 22 58 31 58 42 C 58 52 50 58 38 70 Z M 38 33 A 9 9 0 1 0 38 51 A 9 9 0 1 0 38 33 Z" 
+                fill="url(#navCreamGrad)" fill-rule="evenodd" />
         </svg>
       </div>
       <span class="nav-logo-text">Syncberg</span>
@@ -1403,11 +1411,23 @@
       <div class="footer-logo">
         <div class="footer-logo-row">
           <div class="footer-logo-icon">
-            <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="2" y="2" width="14" height="14" rx="3" fill="white" opacity="0.9" />
-              <rect x="5" y="5" width="4" height="4" rx="1" fill="#161b2e" />
-              <rect x="9.5" y="5" width="3.5" height="3.5" rx="1" fill="#161b2e" />
-              <rect x="5" y="9.5" width="8" height="3.5" rx="1" fill="#161b2e" />
+            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="footerCreamGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#f3ebd9" />
+                  <stop offset="100%" stop-color="#d1c4a9" />
+                </linearGradient>
+                <linearGradient id="footerLightGrad" x1="100%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#ffffff" />
+                  <stop offset="100%" stop-color="#cbd5e1" />
+                </linearGradient>
+              </defs>
+              <!-- Right Pin (Light Silver/White for dark footer) -->
+              <path d="M 62 70 C 50 58 42 52 42 42 C 42 31 51 22 62 22 C 73 22 82 31 82 42 C 82 52 74 58 62 70 Z M 62 33 A 9 9 0 1 0 62 51 A 9 9 0 1 0 62 33 Z" 
+                    fill="url(#footerLightGrad)" fill-rule="evenodd" />
+              <!-- Left Pin (Cream) -->
+              <path d="M 38 70 C 26 58 18 52 18 42 C 18 31 27 22 38 22 C 49 22 58 31 58 42 C 58 52 50 58 38 70 Z M 38 33 A 9 9 0 1 0 38 51 A 9 9 0 1 0 38 33 Z" 
+                    fill="url(#footerCreamGrad)" fill-rule="evenodd" />
             </svg>
           </div>
           <span class="footer-logo-text">Syncberg</span>
