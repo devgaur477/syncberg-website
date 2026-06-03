@@ -365,10 +365,10 @@
       position: relative;
       width: 270px;
       height: 540px;
-      background: #0f111e;
-      border: 10px solid #1e2238;
+      background: #ffffff;
+      border: 10px solid var(--dark);
       border-radius: 38px;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
+      box-shadow: 0 25px 50px -12px rgba(22, 27, 46, 0.25), 0 0 0 1px rgba(22, 27, 46, 0.05);
       overflow: hidden;
       display: flex;
       flex-direction: column;
@@ -382,7 +382,7 @@
       transform: translateX(-50%);
       width: 100px;
       height: 16px;
-      background: #1e2238;
+      background: var(--dark);
       border-bottom-left-radius: 10px;
       border-bottom-right-radius: 10px;
       z-index: 30;
@@ -392,7 +392,7 @@
       position: relative;
       width: 100%;
       height: 100%;
-      background: #070913;
+      background: #ffffff;
       border-radius: 28px;
       overflow: hidden;
       display: flex;
@@ -406,9 +406,9 @@
       justify-content: space-between;
       align-items: center;
       padding: 22px 12px 6px;
-      background: rgba(7, 9, 19, 0.85);
+      background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      border-bottom: 1px solid rgba(22, 27, 46, 0.08);
       z-index: 10;
       box-sizing: border-box;
       height: 54px;
@@ -419,9 +419,7 @@
       font-size: 14px;
       font-weight: 800;
       font-style: italic;
-      background: linear-gradient(135deg, #38bdf8 0%, #a855f7 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: var(--dark);
       letter-spacing: -0.5px;
     }
 
@@ -434,7 +432,7 @@
     .header-icon {
       width: 15px;
       height: 15px;
-      color: #94a3b8;
+      color: #64748b;
       cursor: pointer;
       transition: color 0.2s;
     }
@@ -452,7 +450,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 0 8px rgba(0, 210, 255, 0.35);
+      box-shadow: 0 2px 6px rgba(22, 27, 46, 0.15);
     }
 
     .header-avatar {
@@ -460,7 +458,7 @@
       height: 100%;
       border-radius: 50%;
       object-fit: cover;
-      background: #0f111e;
+      background: #ffffff;
     }
 
     .phone-view {
@@ -495,18 +493,18 @@
     /* ── EXPLORE / RADAR VIEW ── */
     .filter-segment {
       display: flex;
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(22, 27, 46, 0.05);
       border-radius: 20px;
       padding: 2px;
       margin: 2px auto 8px;
       width: fit-content;
-      border: 1px solid rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(22, 27, 46, 0.06);
     }
 
     .filter-pill {
       font-size: 8px;
       font-weight: 700;
-      color: #94a3b8;
+      color: #64748b;
       padding: 3.5px 12px;
       border-radius: 16px;
       cursor: pointer;
@@ -515,20 +513,19 @@
     }
 
     .filter-pill.active {
-      background: rgba(255, 255, 255, 0.1);
-      color: #00D2FF;
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
-      text-shadow: 0 0 8px rgba(0, 210, 255, 0.4);
+      background: rgba(22, 27, 46, 0.08);
+      color: var(--dark);
+      box-shadow: inset 0 1px 0 rgba(22, 27, 46, 0.05);
     }
 
     .radar-map-container {
       position: relative;
       width: 100%;
       height: 220px;
-      background: radial-gradient(circle, #0e1227 0%, #060811 100%);
+      background: radial-gradient(circle, #fcfbfa 0%, #f5f2ec 100%);
       border-radius: 18px;
       overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(22, 27, 46, 0.08);
     }
 
     .radar-sweep {
@@ -537,7 +534,7 @@
       height: 200%;
       top: -50%;
       left: -50%;
-      background: conic-gradient(from 0deg, rgba(0, 210, 255, 0.15) 0deg, rgba(0, 210, 255, 0) 60deg);
+      background: conic-gradient(from 0deg, rgba(22, 27, 46, 0.06) 0deg, rgba(22, 27, 46, 0) 60deg);
       animation: rotateSweep 5s linear infinite;
       transform-origin: center;
       pointer-events: none;
@@ -556,7 +553,7 @@
 
     .radar-ring {
       position: absolute;
-      border: 1px solid rgba(0, 210, 255, 0.08);
+      border: 1px solid rgba(22, 27, 46, 0.05);
       border-radius: 50%;
       top: 50%;
       left: 50%;
@@ -602,7 +599,7 @@
       border-radius: 50%;
       object-fit: cover;
       border: 2px solid #00D2FF;
-      box-shadow: 0 0 8px rgba(0, 210, 255, 0.35);
+      box-shadow: 0 2px 6px rgba(0, 210, 255, 0.2);
     }
 
     .radar-avatar.center-pin {
@@ -615,8 +612,8 @@
     }
 
     .radar-avatar.center-pin .radar-avatar-img {
-      border-color: #fff;
-      box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+      border-color: var(--dark);
+      box-shadow: 0 2px 8px rgba(22, 27, 46, 0.2);
     }
 
     .avatar-glow {
@@ -624,7 +621,7 @@
       width: 42px;
       height: 42px;
       border-radius: 50%;
-      background: rgba(0, 210, 255, 0.15);
+      background: rgba(22, 27, 46, 0.06);
       animation: centerGlow 2s infinite ease-in-out;
       z-index: -1;
     }
@@ -651,7 +648,7 @@
 
     .pin-jordan .radar-avatar-img {
       border-color: #38bdf8;
-      box-shadow: 0 0 8px rgba(56, 189, 248, 0.35);
+      box-shadow: 0 2px 6px rgba(56, 189, 248, 0.2);
     }
 
     .pin-sneha {
@@ -662,7 +659,7 @@
 
     .pin-sneha .radar-avatar-img {
       border-color: #ec4899;
-      box-shadow: 0 0 8px rgba(236, 72, 153, 0.35);
+      box-shadow: 0 2px 6px rgba(236, 72, 153, 0.2);
     }
 
     .pin-tag {
@@ -714,8 +711,8 @@
       width: 28px;
       height: 28px;
       border-radius: 50%;
-      background: rgba(239, 68, 68, 0.15);
-      border: 1.5px solid rgba(239, 68, 68, 0.4);
+      background: rgba(239, 68, 68, 0.1);
+      border: 1.5px solid rgba(239, 68, 68, 0.3);
       animation: pinPulse 2s infinite linear;
       z-index: -1;
     }
@@ -743,18 +740,19 @@
       justify-content: center;
       color: #fff;
       font-size: 10px;
-      box-shadow: 0 0 10px rgba(239, 68, 68, 0.55);
+      box-shadow: 0 2px 6px rgba(239, 68, 68, 0.3);
     }
 
     .event-pin-label {
       font-size: 6px;
       font-weight: 700;
-      color: #fff;
+      color: var(--dark);
       margin-top: 3px;
-      background: rgba(15, 17, 30, 0.9);
+      background: rgba(255, 255, 255, 0.95);
       padding: 1px 4.5px;
       border-radius: 5px;
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(22, 27, 46, 0.12);
+      box-shadow: 0 2px 5px rgba(22, 27, 46, 0.1);
       white-space: nowrap;
       text-transform: uppercase;
       letter-spacing: 0.2px;
@@ -778,8 +776,8 @@
       right: 8px;
       width: 24px;
       height: 24px;
-      background: rgba(15, 17, 30, 0.85);
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(22, 27, 46, 0.15);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -790,14 +788,18 @@
     }
 
     .locate-btn:hover {
-      background: #00D2FF;
-      border-color: #00D2FF;
+      background: var(--dark);
+      border-color: var(--dark);
+    }
+
+    .locate-btn:hover svg {
+      color: #fff;
     }
 
     .locate-btn svg {
       width: 12px;
       height: 12px;
-      color: #fff;
+      color: var(--dark);
     }
 
     .explore-info {
@@ -811,7 +813,7 @@
     .explore-info span:first-child {
       font-size: 10.5px;
       font-weight: 700;
-      color: #f3f4f6;
+      color: var(--dark);
     }
 
     .explore-info .highlight-text {
@@ -829,13 +831,13 @@
     .feed-header-section h3 {
       font-size: 12px;
       font-weight: 700;
-      color: #f3f4f6;
+      color: var(--dark);
       margin: 0;
     }
 
     .feed-header-section p {
       font-size: 8px;
-      color: #94a3b8;
+      color: #64748b;
       margin: 1px 0 0 0;
     }
 
@@ -846,15 +848,15 @@
     }
 
     .discover-card {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.07);
+      background: #ffffff;
+      border: 1px solid rgba(22, 27, 46, 0.08);
       border-radius: 14px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
       position: relative;
-      backdrop-filter: blur(10px);
       transition: transform 0.2s;
+      box-shadow: 0 2px 8px rgba(22, 27, 46, 0.02);
     }
 
     .discover-card:hover {
@@ -865,7 +867,7 @@
       position: relative;
       height: 95px;
       width: 100%;
-      background: #0f111e;
+      background: #f5f2ec;
     }
 
     .card-img {
@@ -880,11 +882,12 @@
       right: 6px;
       width: 20px;
       height: 20px;
-      background: rgba(15, 17, 30, 0.85);
+      background: rgba(255, 255, 255, 0.95);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
     }
 
     .compat-circle-svg {
@@ -895,7 +898,7 @@
 
     .compat-circle-bg {
       fill: none;
-      stroke: rgba(255, 255, 255, 0.15);
+      stroke: rgba(22, 27, 46, 0.08);
       stroke-width: 3.5;
     }
 
@@ -916,7 +919,7 @@
       position: absolute;
       font-size: 5px;
       font-weight: 800;
-      color: #fff;
+      color: var(--dark);
     }
 
     .card-body {
@@ -927,12 +930,12 @@
     .card-name {
       font-size: 9.5px;
       font-weight: 700;
-      color: #f3f4f6;
+      color: var(--dark);
     }
 
     .card-meta {
       font-size: 7px;
-      color: #94a3b8;
+      color: #64748b;
       margin-top: 1px;
     }
 
@@ -951,12 +954,12 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      box-shadow: 0 0 6px rgba(0, 210, 255, 0.4);
+      box-shadow: 0 2px 6px rgba(0, 210, 255, 0.3);
     }
 
     .card-action-btn.pink-neon {
       background: linear-gradient(135deg, #ec4899, #d946ef);
-      box-shadow: 0 0 6px rgba(236, 72, 153, 0.4);
+      box-shadow: 0 2px 6px rgba(236, 72, 153, 0.3);
     }
 
     /* ── VIBES (CHATS VIEW) ── */
@@ -967,11 +970,11 @@
 
     .chat-search-input {
       width: 100%;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(22, 27, 46, 0.04);
+      border: 1px solid rgba(22, 27, 46, 0.08);
       border-radius: 10px;
       padding: 5px 8px 5px 22px;
-      color: #fff;
+      color: var(--dark);
       font-size: 9px;
       box-sizing: border-box;
     }
@@ -992,7 +995,7 @@
       overflow-x: auto;
       padding: 2px 0 6px 0;
       margin-bottom: 6px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      border-bottom: 1px solid rgba(22, 27, 46, 0.08);
     }
 
     .stories-scroll-container::-webkit-scrollbar {
@@ -1017,7 +1020,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 0 6px rgba(0, 210, 255, 0.2);
+      box-shadow: 0 2px 6px rgba(0, 210, 255, 0.15);
     }
 
     .story-avatar-ring.pink-neon {
@@ -1033,7 +1036,7 @@
       height: 100%;
       border-radius: 50%;
       object-fit: cover;
-      border: 1px solid #070913;
+      border: 1px solid #ffffff;
     }
 
     .story-emoji {
@@ -1042,7 +1045,7 @@
 
     .story-name {
       font-size: 7px;
-      color: #94a3b8;
+      color: #64748b;
       font-weight: 500;
     }
 
@@ -1058,16 +1061,16 @@
       gap: 8px;
       padding: 6px 8px;
       border-radius: 10px;
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid rgba(255, 255, 255, 0.04);
+      background: rgba(22, 27, 46, 0.02);
+      border: 1px solid rgba(22, 27, 46, 0.05);
       cursor: pointer;
       transition: all 0.2s;
     }
 
     .chat-list-item:hover,
     .chat-list-item.active {
-      background: rgba(255, 255, 255, 0.06);
-      border-color: rgba(255, 255, 255, 0.1);
+      background: rgba(22, 27, 46, 0.06);
+      border-color: rgba(22, 27, 46, 0.1);
     }
 
     .chat-avatar-wrap {
@@ -1096,7 +1099,7 @@
       height: 100%;
       border-radius: 50%;
       object-fit: cover;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(22, 27, 46, 0.1);
     }
 
     .chat-active-dot {
@@ -1106,7 +1109,7 @@
       width: 7px;
       height: 7px;
       background: #10b981;
-      border: 1.5px solid #070913;
+      border: 1.5px solid #ffffff;
       border-radius: 50%;
     }
 
@@ -1128,7 +1131,7 @@
     .chat-title {
       font-size: 9px;
       font-weight: 700;
-      color: #f3f4f6;
+      color: var(--dark);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -1141,7 +1144,7 @@
 
     .chat-last-msg {
       font-size: 7.5px;
-      color: #94a3b8;
+      color: var(--body-text);
       margin: 0;
       white-space: nowrap;
       overflow: hidden;
@@ -1175,7 +1178,7 @@
       border-radius: 50%;
       object-fit: cover;
       border: 2px solid #00D2FF;
-      box-shadow: 0 0 12px rgba(0, 210, 255, 0.4);
+      box-shadow: 0 2px 6px rgba(0, 210, 255, 0.2);
     }
 
     .profile-status-dot {
@@ -1185,20 +1188,20 @@
       width: 10px;
       height: 10px;
       background: #10b981;
-      border: 2px solid #070913;
+      border: 2px solid #ffffff;
       border-radius: 50%;
     }
 
     .profile-name {
       font-size: 13px;
       font-weight: 800;
-      color: #fff;
+      color: var(--dark);
       margin: 0;
     }
 
     .profile-handle {
       font-size: 8px;
-      color: #00D2FF;
+      color: #0076FF;
       margin-top: 1px;
       font-weight: 500;
     }
@@ -1208,8 +1211,8 @@
       justify-content: space-between;
       align-items: center;
       width: 100%;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      background: rgba(22, 27, 46, 0.02);
+      border: 1px solid rgba(22, 27, 46, 0.05);
       border-radius: 10px;
       padding: 5px 10px;
       margin-bottom: 8px;
@@ -1226,12 +1229,12 @@
     .stat-num {
       font-size: 10px;
       font-weight: 800;
-      color: #fff;
+      color: var(--dark);
     }
 
     .stat-label {
       font-size: 6.5px;
-      color: #94a3b8;
+      color: #64748b;
       text-transform: uppercase;
       font-weight: 600;
       margin-top: 1px;
@@ -1240,12 +1243,12 @@
     .stat-divider {
       width: 1px;
       height: 16px;
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(22, 27, 46, 0.08);
     }
 
     .profile-bio-text {
       font-size: 8.5px;
-      color: #cbd5e1;
+      color: var(--body-text);
       line-height: 1.4;
       text-align: center;
       margin: 0 0 8px 0;
@@ -1274,8 +1277,8 @@
     .profile-share-btn {
       width: 22px;
       height: 22px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(22, 27, 46, 0.04);
+      border: 1px solid rgba(22, 27, 46, 0.08);
       border-radius: 8px;
       display: flex;
       align-items: center;
@@ -1286,7 +1289,7 @@
     .profile-share-btn svg {
       width: 10px;
       height: 10px;
-      color: #fff;
+      color: var(--dark);
     }
 
     .profile-tags-section {
@@ -1297,7 +1300,7 @@
     .profile-tags-section h5 {
       font-size: 9px;
       font-weight: 700;
-      color: #fff;
+      color: var(--dark);
       margin: 0 0 6px 0;
     }
 
@@ -1310,10 +1313,10 @@
     .profile-interest-tag {
       font-size: 7.5px;
       font-weight: 600;
-      color: #94a3b8;
+      color: #4a5568;
       padding: 3.5px 7px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(22, 27, 46, 0.03);
+      border: 1px solid rgba(22, 27, 46, 0.08);
       border-radius: 20px;
       cursor: pointer;
       transition: all 0.2s;
@@ -1321,9 +1324,9 @@
 
     .profile-interest-tag.active {
       color: #fff;
-      background: rgba(0, 210, 255, 0.12);
-      border-color: rgba(0, 210, 255, 0.35);
-      box-shadow: 0 0 8px rgba(0, 210, 255, 0.15);
+      background: var(--dark);
+      border-color: var(--dark);
+      box-shadow: 0 2px 6px rgba(22, 27, 46, 0.15);
     }
 
     /* ── BOTTOM NAV BAR ── */
@@ -1333,9 +1336,9 @@
       left: 0;
       width: 100%;
       height: 52px;
-      background: rgba(7, 9, 19, 0.95);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(12px);
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-top: 1px solid rgba(22, 27, 46, 0.08);
       display: flex;
       justify-content: space-around;
       align-items: center;
@@ -1357,7 +1360,7 @@
     }
 
     .nav-tab.active {
-      color: #00D2FF;
+      color: var(--dark);
     }
 
     .nav-tab-icon {
@@ -1379,7 +1382,7 @@
       height: 5px;
       background: #f43f5e;
       border-radius: 50%;
-      box-shadow: 0 0 5px rgba(244, 63, 94, 0.6);
+      box-shadow: 0 0 5px rgba(244, 63, 94, 0.3);
     }
 
     .nav-tab-plus {
@@ -1415,8 +1418,8 @@
       left: 0;
       width: 100%;
       height: 240px;
-      background: #0d0f1e;
-      border-top: 1.5px solid rgba(255, 255, 255, 0.12);
+      background: #ffffff;
+      border-top: 1.5px solid rgba(22, 27, 46, 0.08);
       border-radius: 20px 20px 0 0;
       z-index: 40;
       transform: translateY(100%);
@@ -1425,7 +1428,7 @@
       padding: 8px 14px 14px;
       display: flex;
       flex-direction: column;
-      box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 -10px 30px rgba(22, 27, 46, 0.08);
     }
 
     .event-bottom-sheet.active {
@@ -1435,7 +1438,7 @@
     .sheet-drag-handle {
       width: 32px;
       height: 3px;
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(22, 27, 46, 0.15);
       border-radius: 2px;
       margin: 0 auto 8px;
       cursor: pointer;
@@ -1446,14 +1449,14 @@
       top: 8px;
       right: 12px;
       font-size: 15px;
-      color: #94a3b8;
+      color: #64748b;
       cursor: pointer;
       transition: color 0.2s;
       line-height: 1;
     }
 
     .sheet-close-btn:hover {
-      color: #fff;
+      color: var(--dark);
     }
 
     .sheet-content {
@@ -1482,17 +1485,17 @@
     .sheet-badge-private {
       font-size: 6px;
       font-weight: 800;
-      background: rgba(255, 255, 255, 0.05);
-      color: #94a3b8;
+      background: rgba(22, 27, 46, 0.04);
+      color: #64748b;
       padding: 2px 6px;
       border-radius: 4px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(22, 27, 46, 0.08);
     }
 
     .sheet-event-title {
       font-size: 11px;
       font-weight: 800;
-      color: #fff;
+      color: var(--dark);
       margin: 0;
       line-height: 1.3;
     }
@@ -1519,7 +1522,7 @@
     .sheet-host-name {
       font-size: 7.5px;
       font-weight: 700;
-      color: #fff;
+      color: var(--dark);
     }
 
     .sheet-host-karma {
@@ -1530,7 +1533,7 @@
 
     .sheet-event-desc {
       font-size: 8px;
-      color: #cbd5e1;
+      color: var(--body-text);
       line-height: 1.4;
       margin: 0;
     }
@@ -1544,10 +1547,10 @@
     .sheet-msg-host-btn {
       flex: 1;
       padding: 6px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(22, 27, 46, 0.04);
+      border: 1px solid rgba(22, 27, 46, 0.08);
       border-radius: 8px;
-      color: #fff;
+      color: var(--dark);
       font-size: 8px;
       font-weight: 700;
       cursor: pointer;
@@ -1555,7 +1558,7 @@
     }
 
     .sheet-msg-host-btn:hover {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(22, 27, 46, 0.08);
     }
 
     .sheet-open-chat-btn {
@@ -1601,14 +1604,14 @@
       width: 26px;
       height: 26px;
       border-radius: 50%;
-      background: #0f111e;
+      background: #ffffff;
       border: 2px solid #00D2FF;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 11px;
-      box-shadow: 0 0 8px rgba(0, 210, 255, 0.35);
-      color: #fff;
+      box-shadow: 0 2px 6px rgba(0, 210, 255, 0.2);
+      color: var(--dark);
     }
 
     /* Feed Daily Posts list styling */
@@ -1620,13 +1623,14 @@
     }
 
     .feed-post-card {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.07);
+      background: #ffffff;
+      border: 1px solid rgba(22, 27, 46, 0.08);
       border-radius: 12px;
       padding: 10px;
       display: flex;
       flex-direction: column;
       gap: 8px;
+      box-shadow: 0 2px 8px rgba(22, 27, 46, 0.02);
     }
 
     .post-header {
@@ -1640,7 +1644,7 @@
       height: 24px;
       border-radius: 50%;
       object-fit: cover;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(22, 27, 46, 0.08);
     }
 
     .post-author-meta {
@@ -1652,7 +1656,7 @@
     .post-author-name {
       font-size: 9.5px;
       font-weight: 700;
-      color: #fff;
+      color: var(--dark);
     }
 
     .post-time {
@@ -1676,7 +1680,7 @@
 
     .post-caption {
       font-size: 8.5px;
-      color: #cbd5e1;
+      color: var(--body-text);
       margin: 0;
       line-height: 1.4;
     }
@@ -1686,7 +1690,7 @@
       height: 100px;
       border-radius: 8px;
       overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(22, 27, 46, 0.08);
     }
 
     .post-media-img {
@@ -1698,7 +1702,7 @@
     .post-actions {
       display: flex;
       gap: 12px;
-      border-top: 1px solid rgba(255, 255, 255, 0.04);
+      border-top: 1px solid rgba(22, 27, 46, 0.06);
       padding-top: 6px;
     }
 
@@ -1730,8 +1734,8 @@
       top: 60px;
       left: 50%;
       transform: translateX(-50%) translateY(-20px);
-      background: rgba(15, 17, 30, 0.95);
-      border: 1px solid rgba(0, 210, 255, 0.3);
+      background: var(--dark);
+      border: 1px solid var(--dark);
       color: #fff;
       font-size: 8px;
       padding: 5px 12px;
@@ -1740,7 +1744,7 @@
       opacity: 0;
       pointer-events: none;
       transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 4px 12px rgba(22, 27, 46, 0.15);
     }
 
     .phone-toast.active {
@@ -2183,14 +2187,14 @@
                       <stop offset="0%" stop-color="#f3ebd9" />
                       <stop offset="100%" stop-color="#d1c4a9" />
                     </linearGradient>
-                    <linearGradient id="headerLightGrad" x1="100%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" stop-color="#ffffff" />
-                      <stop offset="100%" stop-color="#cbd5e1" />
+                    <linearGradient id="headerDarkGrad" x1="100%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="#353c4d" />
+                      <stop offset="100%" stop-color="#1a1e26" />
                     </linearGradient>
                   </defs>
                   <path
                     d="M 62 70 C 50 58 42 52 42 42 C 42 31 51 22 62 22 C 73 22 82 31 82 42 C 82 52 74 58 62 70 Z M 62 33 A 9 9 0 1 0 62 51 A 9 9 0 1 0 62 33 Z"
-                    fill="url(#headerLightGrad)" fill-rule="evenodd" />
+                    fill="url(#headerDarkGrad)" fill-rule="evenodd" />
                   <path
                     d="M 38 70 C 26 58 18 52 18 42 C 18 31 27 22 38 22 C 49 22 58 31 58 42 C 58 52 50 58 38 70 Z M 38 33 A 9 9 0 1 0 38 51 A 9 9 0 1 0 38 33 Z"
                     fill="url(#headerCreamGrad)" fill-rule="evenodd" />
@@ -2525,17 +2529,17 @@
 
                 <!-- My Gallery Moments -->
                 <div class="profile-gallery-section" style="margin-top: 14px; width: 100%;">
-                  <h5 style="font-size: 9px; font-weight: 700; color: #fff; margin: 0 0 6px 0;">My Moments</h5>
+                  <h5 style="font-size: 9px; font-weight: 700; color: var(--dark); margin: 0 0 6px 0;">My Moments</h5>
                   <div class="profile-gallery-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
                     <div class="gallery-item-wrap"
-                      style="position: relative; border-radius: 8px; overflow: hidden; height: 64px; border: 1px solid rgba(255,255,255,0.08);">
+                      style="position: relative; border-radius: 8px; overflow: hidden; height: 64px; border: 1px solid rgba(22, 27, 46, 0.08);">
                       <img src="gallery_running.png" style="width: 100%; height: 100%; object-fit: cover;"
                         alt="Running">
                       <span
                         style="position: absolute; bottom: 4px; left: 4px; font-size: 6px; background: rgba(0,0,0,0.6); color: #fff; padding: 2px 4px; border-radius: 4px; font-weight: bold;">RUNNING</span>
                     </div>
                     <div class="gallery-item-wrap"
-                      style="position: relative; border-radius: 8px; overflow: hidden; height: 64px; border: 1px solid rgba(255,255,255,0.08);">
+                      style="position: relative; border-radius: 8px; overflow: hidden; height: 64px; border: 1px solid rgba(22, 27, 46, 0.08);">
                       <img src="gallery_music.png" style="width: 100%; height: 100%; object-fit: cover;" alt="Jamming">
                       <span
                         style="position: absolute; bottom: 4px; left: 4px; font-size: 6px; background: rgba(0,0,0,0.6); color: #fff; padding: 2px 4px; border-radius: 4px; font-weight: bold;">JAMMING</span>
@@ -2621,11 +2625,11 @@
                 <form id="host-event-form" style="display: flex; flex-direction: column; gap: 8px; flex: 1;">
                   <div style="display: flex; flex-direction: column;">
                     <input type="text" id="host-event-title" placeholder="Event Name (e.g. Sunday Marathon)" required
-                      style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 6px; color: #fff; font-size: 8.5px; box-sizing: border-box; width: 100%;">
+                      style="background: rgba(22, 27, 46, 0.04); border: 1px solid rgba(22, 27, 46, 0.08); border-radius: 8px; padding: 6px; color: var(--dark); font-size: 8.5px; box-sizing: border-box; width: 100%;">
                   </div>
                   <div style="display: flex; flex-direction: column;">
                     <select id="host-event-category"
-                      style="background: rgba(15, 17, 30, 0.95); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 6px; color: #fff; font-size: 8.5px; box-sizing: border-box; width: 100%;">
+                      style="background: #ffffff; border: 1px solid rgba(22, 27, 46, 0.08); border-radius: 8px; padding: 6px; color: var(--dark); font-size: 8.5px; box-sizing: border-box; width: 100%;">
                       <option value="Running">🏃 Running</option>
                       <option value="Gym">💪 Gym</option>
                       <option value="Guitar">🎸 Music</option>
@@ -2634,7 +2638,7 @@
                   </div>
                   <div style="display: flex; flex-direction: column;">
                     <textarea id="host-event-desc" placeholder="Event Description..." required rows="2"
-                      style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 6px; color: #fff; font-size: 8.5px; box-sizing: border-box; width: 100%; resize: none;"></textarea>
+                      style="background: rgba(22, 27, 46, 0.04); border: 1px solid rgba(22, 27, 46, 0.08); border-radius: 8px; padding: 6px; color: var(--dark); font-size: 8.5px; box-sizing: border-box; width: 100%; resize: none;"></textarea>
                   </div>
                   <button type="submit" class="sheet-open-chat-btn"
                     style="width: 100%; border: none; padding: 8px; font-size: 9px; margin-top: auto;">CREATE
@@ -2648,7 +2652,8 @@
 
           </div>
         </div>
-        <p class="mockup-disclaimer">Note: This is a simulated preview, not the exact application. The app is a work in progress.</p>
+        <p class="mockup-disclaimer">Note: This is a simulated preview, not the exact application. The app is a work in
+          progress.</p>
       </div>
     </div>
   </section>
@@ -2656,9 +2661,9 @@
   <!-- EVERY INTEREST, ONE PLATFORM -->
   <section class="interests" id="interests">
     <div class="interests-header">
-      <h2>Every Interest, One Platform</h2>
-      <p>Whatever brings you joy, you'll find your people on Syncberg. Explore communities built around the things you
-        love.</p>
+      <h2>Built Around What You Love</h2>
+      <p>Connect with people who share your passions and discover communities that feel like home.
+      </p>
     </div>
 
     <div class="interests-tags">
@@ -2793,7 +2798,7 @@
     <hr class="footer-divider" />
 
     <div class="footer-bottom">
-      &copy; 2024 Syncberg. All rights reserved. Built for meaningful connections.
+      &copy; 2026 Syncberg. All rights reserved. Built for meaningful connections.
     </div>
   </footer>
 
