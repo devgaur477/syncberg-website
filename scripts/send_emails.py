@@ -1,10 +1,27 @@
 import os
 import json
+import base64
 import requests
 import firebase_admin
 from firebase_admin import credentials, firestore
 
 def send_welcome_email(email, api_key):
+    # Load logo.png and convert to base64 for inline attachment
+    logo_data = None
+    try:
+        paths_to_try = [
+            'logo.png',
+            os.path.join(os.path.dirname(os.path.abspath(__file__)), 'logo.png'),
+            os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'logo.png')
+        ]
+        for p in paths_to_try:
+            if os.path.exists(p):
+                with open(p, 'rb') as f:
+                    logo_data = base64.b64encode(f.read()).decode('utf-8')
+                break
+    except Exception as e:
+        print(f"Warning: Could not read logo.png for attachment: {e}")
+
     # HTML welcome template matching Syncberg's theme
     html_content = f"""
     <div style="font-family: 'Inter', -apple-system, sans-serif; background-color: #f5f2ec; padding: 40px 20px; text-align: center;">
@@ -12,8 +29,8 @@ def send_welcome_email(email, api_key):
         
         <!-- Logo -->
         <div style="text-align: center; margin-bottom: 30px;">
-          <div style="display: inline-block; width: 44px; height: 44px; background: #161b2e; border-radius: 10px; line-height: 44px; color: #ffffff; font-size: 20px; font-weight: bold; text-align: center;">
-            S
+          <div style="display: inline-block; width: 44px; height: 44px; text-align: center; vertical-align: middle;">
+            <img src="cid:logo-image" alt="Syncberg Logo" style="width: 44px; height: 44px; display: inline-block; vertical-align: middle; border: none;" />
           </div>
           <h2 style="color: #161b2e; font-size: 22px; font-weight: 800; margin-top: 12px; margin-bottom: 0; letter-spacing: -0.5px;">Syncberg</h2>
         </div>
@@ -54,6 +71,18 @@ def send_welcome_email(email, api_key):
         "subject": "Welcome to the Syncberg Beta! 🎉",
         "html": html_content
     }
+
+    if logo_data:
+        payload["attachments"] = [
+            {
+                "content": logo_data,
+                "filename": "logo.png",
+                "contentId": "logo-image",
+                "content_id": "logo-image",
+                "contentType": "image/png",
+                "content_type": "image/png"
+            }
+        ]
 
     try:
         res = requests.post(resend_url, json=payload, headers=headers)
