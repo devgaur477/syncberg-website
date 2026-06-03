@@ -269,8 +269,20 @@
     .features-preview {
       flex: 0.8;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
+    }
+
+    .mockup-disclaimer {
+      font-size: 11px;
+      color: #64748b;
+      text-align: center;
+      margin-top: 14px;
+      font-weight: 500;
+      opacity: 0.85;
+      max-width: 270px;
+      line-height: 1.5;
     }
 
     @media (max-width: 768px) {
@@ -426,7 +438,7 @@
       cursor: pointer;
       transition: color 0.2s;
     }
-    
+
     .header-icon:hover {
       color: #f43f5e;
     }
@@ -533,8 +545,13 @@
     }
 
     @keyframes rotateSweep {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
     }
 
     .radar-ring {
@@ -546,11 +563,26 @@
       transform: translate(-50%, -50%);
       pointer-events: none;
     }
-    
-    .radar-ring.r1 { width: 50px; height: 50px; }
-    .radar-ring.r2 { width: 105px; height: 105px; }
-    .radar-ring.r3 { width: 160px; height: 160px; }
-    .radar-ring.r4 { width: 215px; height: 215px; }
+
+    .radar-ring.r1 {
+      width: 50px;
+      height: 50px;
+    }
+
+    .radar-ring.r2 {
+      width: 105px;
+      height: 105px;
+    }
+
+    .radar-ring.r3 {
+      width: 160px;
+      height: 160px;
+    }
+
+    .radar-ring.r4 {
+      width: 215px;
+      height: 215px;
+    }
 
     .radar-avatar {
       position: absolute;
@@ -598,23 +630,40 @@
     }
 
     @keyframes centerGlow {
-      0%, 100% { transform: scale(1); opacity: 0.4; }
-      50% { transform: scale(1.25); opacity: 0.8; }
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 0.4;
+      }
+
+      50% {
+        transform: scale(1.25);
+        opacity: 0.8;
+      }
     }
 
-    .pin-rahul {
+    .pin-jordan {
       top: 24%;
       left: 20%;
       animation: floatGentle 5s infinite ease-in-out;
     }
-    .pin-rahul .radar-avatar-img { border-color: #38bdf8; box-shadow: 0 0 8px rgba(56, 189, 248, 0.35); }
+
+    .pin-jordan .radar-avatar-img {
+      border-color: #38bdf8;
+      box-shadow: 0 0 8px rgba(56, 189, 248, 0.35);
+    }
 
     .pin-sneha {
       bottom: 28%;
       right: 18%;
       animation: floatGentle 6s infinite ease-in-out 1s;
     }
-    .pin-sneha .radar-avatar-img { border-color: #ec4899; box-shadow: 0 0 8px rgba(236, 72, 153, 0.35); }
+
+    .pin-sneha .radar-avatar-img {
+      border-color: #ec4899;
+      box-shadow: 0 0 8px rgba(236, 72, 153, 0.35);
+    }
 
     .pin-tag {
       position: absolute;
@@ -627,12 +676,25 @@
       white-space: nowrap;
       text-transform: uppercase;
     }
-    .tag-fitness { background: #38bdf8; }
-    .tag-music { background: #ec4899; }
+
+    .tag-fitness {
+      background: #38bdf8;
+    }
+
+    .tag-music {
+      background: #ec4899;
+    }
 
     @keyframes floatGentle {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-4px); }
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-4px);
+      }
     }
 
     .radar-event-pin {
@@ -659,8 +721,15 @@
     }
 
     @keyframes pinPulse {
-      0% { transform: scale(0.8); opacity: 0.9; }
-      100% { transform: scale(2.2); opacity: 0; }
+      0% {
+        transform: scale(0.8);
+        opacity: 0.9;
+      }
+
+      100% {
+        transform: scale(2.2);
+        opacity: 0;
+      }
     }
 
     .event-pin-icon {
@@ -692,8 +761,15 @@
     }
 
     @keyframes bounceMarker {
-      0%, 100% { transform: translateY(0) scale(1); }
-      50% { transform: translateY(-3px) scale(1.05); }
+
+      0%,
+      100% {
+        transform: translateY(0) scale(1);
+      }
+
+      50% {
+        transform: translateY(-3px) scale(1.05);
+      }
     }
 
     .locate-btn {
@@ -877,7 +953,7 @@
       cursor: pointer;
       box-shadow: 0 0 6px rgba(0, 210, 255, 0.4);
     }
-    
+
     .card-action-btn.pink-neon {
       background: linear-gradient(135deg, #ec4899, #d946ef);
       box-shadow: 0 0 6px rgba(236, 72, 153, 0.4);
@@ -947,7 +1023,7 @@
     .story-avatar-ring.pink-neon {
       background: linear-gradient(135deg, #ec4899, #f43f5e);
     }
-    
+
     .story-avatar-ring.green-neon {
       background: linear-gradient(135deg, #10b981, #059669);
     }
@@ -988,7 +1064,8 @@
       transition: all 0.2s;
     }
 
-    .chat-list-item:hover, .chat-list-item.active {
+    .chat-list-item:hover,
+    .chat-list-item.active {
       background: rgba(255, 255, 255, 0.06);
       border-color: rgba(255, 255, 255, 0.1);
     }
@@ -1499,6 +1576,178 @@
       opacity: 0.9;
     }
 
+
+    /* ── MOCK NAMES & INTERACTION STYLES ── */
+    .blink-matched .radar-avatar-img,
+    .blink-matched .radar-avatar-emoji-wrap {
+      animation: interestBlink 1.2s infinite alternate;
+      border-color: #00D2FF !important;
+      box-shadow: 0 0 12px rgba(0, 210, 255, 0.8) !important;
+    }
+
+    @keyframes interestBlink {
+      0% {
+        box-shadow: 0 0 3px rgba(0, 210, 255, 0.3);
+        border-color: rgba(0, 210, 255, 0.4);
+      }
+
+      100% {
+        box-shadow: 0 0 12px rgba(0, 210, 255, 1);
+        border-color: rgba(0, 210, 255, 1);
+      }
+    }
+
+    .radar-avatar-emoji-wrap {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #0f111e;
+      border: 2px solid #00D2FF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      box-shadow: 0 0 8px rgba(0, 210, 255, 0.35);
+      color: #fff;
+    }
+
+    /* Feed Daily Posts list styling */
+    .feed-posts-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .feed-post-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 12px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .post-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .post-avatar {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .post-author-meta {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .post-author-name {
+      font-size: 9.5px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .post-time {
+      font-size: 7px;
+      color: #64748b;
+    }
+
+    .post-badge {
+      font-size: 6px;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: rgba(0, 210, 255, 0.1);
+      color: #00D2FF;
+    }
+
+    .feed-post-card:nth-child(2) .post-badge {
+      background: rgba(236, 72, 153, 0.1);
+      color: #ec4899;
+    }
+
+    .post-caption {
+      font-size: 8.5px;
+      color: #cbd5e1;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    .post-media {
+      width: 100%;
+      height: 100px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .post-media-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .post-actions {
+      display: flex;
+      gap: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.04);
+      padding-top: 6px;
+    }
+
+    .post-action-btn {
+      background: none;
+      border: none;
+      color: #64748b;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .post-action-btn:hover,
+    .post-action-btn.active {
+      color: #f43f5e;
+    }
+
+    .post-action-icon {
+      width: 12px;
+      height: 12px;
+    }
+
+    /* Toast Notification */
+    .phone-toast {
+      position: absolute;
+      top: 60px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-20px);
+      background: rgba(15, 17, 30, 0.95);
+      border: 1px solid rgba(0, 210, 255, 0.3);
+      color: #fff;
+      font-size: 8px;
+      padding: 5px 12px;
+      border-radius: 20px;
+      z-index: 100;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    .phone-toast.active {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
     /* ── INTERESTS SECTION ── */
     .interests {
       background: #f7f7f8;
@@ -1835,14 +2084,16 @@
             </linearGradient>
           </defs>
           <!-- Right Pin (Dark) -->
-          <path d="M 62 70 C 50 58 42 52 42 42 C 42 31 51 22 62 22 C 73 22 82 31 82 42 C 82 52 74 58 62 70 Z M 62 33 A 9 9 0 1 0 62 51 A 9 9 0 1 0 62 33 Z" 
-                fill="url(#navDarkGrad)" fill-rule="evenodd" />
+          <path
+            d="M 62 70 C 50 58 42 52 42 42 C 42 31 51 22 62 22 C 73 22 82 31 82 42 C 82 52 74 58 62 70 Z M 62 33 A 9 9 0 1 0 62 51 A 9 9 0 1 0 62 33 Z"
+            fill="url(#navDarkGrad)" fill-rule="evenodd" />
           <!-- Left Pin (Cream) -->
-          <path d="M 38 70 C 26 58 18 52 18 42 C 18 31 27 22 38 22 C 49 22 58 31 58 42 C 58 52 50 58 38 70 Z M 38 33 A 9 9 0 1 0 38 51 A 9 9 0 1 0 38 33 Z" 
-                fill="url(#navCreamGrad)" fill-rule="evenodd" />
+          <path
+            d="M 38 70 C 26 58 18 52 18 42 C 18 31 27 22 38 22 C 49 22 58 31 58 42 C 58 52 50 58 38 70 Z M 38 33 A 9 9 0 1 0 38 51 A 9 9 0 1 0 38 33 Z"
+            fill="url(#navCreamGrad)" fill-rule="evenodd" />
         </svg>
       </div>
-      <span class="nav-logo-text">Syncberg</span>
+      <span class="nav-logo-text">Syncberg - A Beginning Of New Era</span>
     </a>
     <a href="#beta" class="nav-cta" id="join-beta-nav">Join Beta</a>
   </nav>
@@ -1852,7 +2103,7 @@
     <div class="hero-shape-mid"></div>
     <div class="hero-inner">
       <span class="badge" id="coming-soon-badge">Coming Soon</span>
-      <h1>Welcome to syncberg <br>Host Your Events</h1>
+      <h1>Find Your People <br>Host Your Events</h1>
       <p>Syncberg is where connections come alive. Find people who share your passions, host events, and build
         meaningful relationships in a digital city designed for real connections.</p>
       <div class="hero-buttons">
@@ -1924,13 +2175,37 @@
 
             <!-- Global header visible inside the app -->
             <div class="app-header">
-              <span class="app-logo">conXtion</span>
+              <div class="app-logo-container" style="display: flex; align-items: center; gap: 4px;">
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  style="width: 14px; height: 14px;">
+                  <defs>
+                    <linearGradient id="headerCreamGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#f3ebd9" />
+                      <stop offset="100%" stop-color="#d1c4a9" />
+                    </linearGradient>
+                    <linearGradient id="headerLightGrad" x1="100%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="#ffffff" />
+                      <stop offset="100%" stop-color="#cbd5e1" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    d="M 62 70 C 50 58 42 52 42 42 C 42 31 51 22 62 22 C 73 22 82 31 82 42 C 82 52 74 58 62 70 Z M 62 33 A 9 9 0 1 0 62 51 A 9 9 0 1 0 62 33 Z"
+                    fill="url(#headerLightGrad)" fill-rule="evenodd" />
+                  <path
+                    d="M 38 70 C 26 58 18 52 18 42 C 18 31 27 22 38 22 C 49 22 58 31 58 42 C 58 52 50 58 38 70 Z M 38 33 A 9 9 0 1 0 38 51 A 9 9 0 1 0 38 33 Z"
+                    fill="url(#headerCreamGrad)" fill-rule="evenodd" />
+                </svg>
+                <span class="app-logo">syncberg</span>
+              </div>
               <div class="app-header-right">
-                <svg class="header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                <svg class="header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                  </path>
                 </svg>
                 <div class="header-avatar-ring">
-                  <img src="avatar_dev.png" alt="Dev" class="header-avatar">
+                  <img src="avatar_dev.png" alt="Alex" class="header-avatar">
                 </div>
               </div>
             </div>
@@ -1950,7 +2225,7 @@
                 <div class="radar-ring r2"></div>
                 <div class="radar-ring r3"></div>
                 <div class="radar-ring r4"></div>
-                
+
                 <!-- Central Avatar (You) -->
                 <div class="radar-avatar center-pin">
                   <div class="avatar-glow"></div>
@@ -1959,15 +2234,30 @@
 
                 <!-- People Pins (visible when filter-people is active) -->
                 <div class="people-pins-group">
-                  <!-- Rahul Pin -->
-                  <div class="radar-avatar pin-rahul">
-                    <img src="avatar_rahul.png" class="radar-avatar-img" alt="Rahul">
-                    <span class="pin-tag tag-fitness">Fitness</span>
+                  <!-- Jordan Pin -->
+                  <div class="radar-avatar pin-jordan" data-interests="Gym,Tech">
+                    <img src="avatar_rahul.png" class="radar-avatar-img" alt="Jordan">
+                    <span class="pin-tag tag-fitness">Gym</span>
                   </div>
                   <!-- Sneha Pin -->
-                  <div class="radar-avatar pin-sneha">
+                  <div class="radar-avatar pin-sneha" data-interests="Music,Art">
                     <img src="avatar_sneha.png" class="radar-avatar-img" alt="Sneha">
                     <span class="pin-tag tag-music">Music</span>
+                  </div>
+                  <!-- Karan Pin -->
+                  <div class="radar-avatar pin-karan" data-interests="Guitar,Music" style="top: 18%; right: 22%;">
+                    <div class="radar-avatar-emoji-wrap">🎸</div>
+                    <span class="pin-tag tag-music">Karan</span>
+                  </div>
+                  <!-- Varun Pin -->
+                  <div class="radar-avatar pin-varun" data-interests="Gym,Running" style="bottom: 12%; left: 40%;">
+                    <div class="radar-avatar-emoji-wrap">🏃</div>
+                    <span class="pin-tag tag-fitness">Varun</span>
+                  </div>
+                  <!-- Elena Pin -->
+                  <div class="radar-avatar pin-elena" data-interests="Guitar,Singing" style="top: 48%; right: 10%;">
+                    <div class="radar-avatar-emoji-wrap">🎤</div>
+                    <span class="pin-tag tag-music">Elena</span>
                   </div>
                 </div>
 
@@ -1983,7 +2273,8 @@
 
                 <!-- Locate Button -->
                 <button class="locate-btn" id="locate-btn-action" title="Locate me">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
                     <circle cx="12" cy="12" r="10"></circle>
                     <circle cx="12" cy="12" r="3"></circle>
                     <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -2001,48 +2292,84 @@
               </div>
             </div>
 
-            <!-- VIEW 2: FEED (Discover Cards) -->
+            <!-- VIEW 2: FEED (Daily Updates) -->
             <div class="phone-view" id="view-feed">
               <div class="feed-header-section">
-                <h3>Discover Cards</h3>
-                <p>Compatible partners nearby</p>
+                <h3>Daily Feed</h3>
+                <p>Moments from your connections</p>
               </div>
-              <div class="discover-cards-grid">
-                <!-- Card 1: Rahul -->
-                <div class="discover-card">
-                  <div class="card-image-wrap">
-                    <img src="avatar_rahul.png" class="card-img" alt="Rahul">
-                    <div class="card-compat-badge">
-                      <svg class="compat-circle-svg" viewBox="0 0 36 36">
-                        <path class="compat-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                        <path class="compat-circle" stroke-dasharray="95, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                      </svg>
-                      <span class="compat-pct">95%</span>
+              <div class="feed-posts-list">
+                <!-- Post 1: Jordan -->
+                <div class="feed-post-card">
+                  <div class="post-header">
+                    <img src="avatar_rahul.png" class="post-avatar" alt="Jordan">
+                    <div class="post-author-meta">
+                      <span class="post-author-name">Jordan</span>
+                      <span class="post-time">2 hours ago</span>
                     </div>
+                    <span class="post-badge">🏃 Running</span>
                   </div>
-                  <div class="card-body">
-                    <span class="card-name">Rahul, 18</span>
-                    <div class="card-meta">2.6 km away • 4715 Karma</div>
-                    <button class="card-action-btn">⚡</button>
+                  <p class="post-caption">Early morning marathon prep! Beat my personal record by 2 minutes today. 🏅💪
+                  </p>
+                  <div class="post-media">
+                    <img src="gallery_running.png" class="post-media-img" alt="Running post">
+                  </div>
+                  <div class="post-actions">
+                    <button class="post-action-btn like-btn" onclick="toggleLike(this)">
+                      <svg class="post-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path
+                          d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                        </path>
+                      </svg>
+                      <span class="like-count">24</span>
+                    </button>
+                    <button class="post-action-btn">
+                      <svg class="post-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path
+                          d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                        </path>
+                      </svg>
+                      <span>5</span>
+                    </button>
                   </div>
                 </div>
 
-                <!-- Card 2: Sneha -->
-                <div class="discover-card">
-                  <div class="card-image-wrap">
-                    <img src="avatar_sneha.png" class="card-img" alt="Sneha">
-                    <div class="card-compat-badge">
-                      <svg class="compat-circle-svg" viewBox="0 0 36 36">
-                        <path class="compat-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                        <path class="compat-circle" stroke-dasharray="88, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-                      </svg>
-                      <span class="compat-pct">88%</span>
+                <!-- Post 2: Sneha -->
+                <div class="feed-post-card">
+                  <div class="post-header">
+                    <img src="avatar_sneha.png" class="post-avatar" alt="Sneha">
+                    <div class="post-author-meta">
+                      <span class="post-author-name">Sneha</span>
+                      <span class="post-time">5 hours ago</span>
                     </div>
+                    <span class="post-badge">🎸 Music</span>
                   </div>
-                  <div class="card-body">
-                    <span class="card-name">Sneha, 26</span>
-                    <div class="card-meta">4.2 km away • 896 Karma</div>
-                    <button class="card-action-btn pink-neon">⚡</button>
+                  <p class="post-caption">Testing out some new drum grooves for our weekend jam session. Who's excited?
+                    🥁✨</p>
+                  <div class="post-media">
+                    <img src="gallery_music.png" class="post-media-img" alt="Music post">
+                  </div>
+                  <div class="post-actions">
+                    <button class="post-action-btn like-btn" onclick="toggleLike(this)">
+                      <svg class="post-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path
+                          d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                        </path>
+                      </svg>
+                      <span class="like-count">42</span>
+                    </button>
+                    <button class="post-action-btn">
+                      <svg class="post-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path
+                          d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                        </path>
+                      </svg>
+                      <span>12</span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -2051,7 +2378,8 @@
             <!-- VIEW 3: VIBES (Chats) -->
             <div class="phone-view" id="view-vibes">
               <div class="chat-search-container">
-                <svg class="search-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="search-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
                   <circle cx="11" cy="11" r="8"></circle>
                   <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                 </svg>
@@ -2062,9 +2390,9 @@
               <div class="stories-scroll-container">
                 <div class="story-bubble">
                   <div class="story-avatar-ring">
-                    <img src="avatar_rahul.png" class="story-avatar" alt="Rahul">
+                    <img src="avatar_rahul.png" class="story-avatar" alt="Jordan">
                   </div>
-                  <span class="story-name">Rahul</span>
+                  <span class="story-name">Jordan</span>
                 </div>
                 <div class="story-bubble">
                   <div class="story-avatar-ring pink-neon">
@@ -2099,18 +2427,18 @@
                       <span class="chat-title">Practice On Weekends</span>
                       <span class="chat-time">5m</span>
                     </div>
-                    <p class="chat-last-msg">Dev: Let's jam at 4 PM!</p>
+                    <p class="chat-last-msg">Alex: Let's jam at 4 PM!</p>
                   </div>
                 </div>
 
                 <!-- Chat 2 -->
                 <div class="chat-list-item">
                   <div class="chat-avatar-wrap">
-                    <img src="avatar_rahul.png" class="chat-user-avatar" alt="Rahul">
+                    <img src="avatar_rahul.png" class="chat-user-avatar" alt="Jordan">
                   </div>
                   <div class="chat-item-body">
                     <div class="chat-title-row">
-                      <span class="chat-title">Rahul</span>
+                      <span class="chat-title">Jordan</span>
                       <span class="chat-time">2h</span>
                     </div>
                     <p class="chat-last-msg">Are you up for running tomorrow?</p>
@@ -2139,11 +2467,11 @@
                 <!-- Main Bio Section -->
                 <div class="profile-header-card">
                   <div class="profile-avatar-wrap">
-                    <img src="avatar_dev.png" class="profile-avatar" alt="Dev">
+                    <img src="avatar_dev.png" class="profile-avatar" alt="Alex">
                     <span class="profile-status-dot"></span>
                   </div>
-                  <h4 class="profile-name">Dev Gaur</h4>
-                  <span class="profile-handle">@devgaur_477</span>
+                  <h4 class="profile-name">Alex Rivers</h4>
+                  <span class="profile-handle">@alex_rivers</span>
                 </div>
 
                 <!-- Stats Section -->
@@ -2173,7 +2501,8 @@
                 <div class="profile-actions-row">
                   <button class="profile-primary-btn">Edit Profile</button>
                   <button class="profile-share-btn" title="Share profile">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
                       <circle cx="18" cy="5" r="3"></circle>
                       <circle cx="6" cy="12" r="3"></circle>
                       <circle cx="18" cy="19" r="3"></circle>
@@ -2187,10 +2516,30 @@
                 <div class="profile-tags-section">
                   <h5>My Interests</h5>
                   <div class="profile-interest-tags">
-                    <span class="profile-interest-tag active">🏃 Running</span>
-                    <span class="profile-interest-tag active">💪 Gym</span>
-                    <span class="profile-interest-tag">🎸 Guitar</span>
-                    <span class="profile-interest-tag">🎤 Singing</span>
+                    <span class="profile-interest-tag active" data-interest="Running">🏃 Running</span>
+                    <span class="profile-interest-tag active" data-interest="Gym">💪 Gym</span>
+                    <span class="profile-interest-tag" data-interest="Guitar">🎸 Guitar</span>
+                    <span class="profile-interest-tag" data-interest="Singing">🎤 Singing</span>
+                  </div>
+                </div>
+
+                <!-- My Gallery Moments -->
+                <div class="profile-gallery-section" style="margin-top: 14px; width: 100%;">
+                  <h5 style="font-size: 9px; font-weight: 700; color: #fff; margin: 0 0 6px 0;">My Moments</h5>
+                  <div class="profile-gallery-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                    <div class="gallery-item-wrap"
+                      style="position: relative; border-radius: 8px; overflow: hidden; height: 64px; border: 1px solid rgba(255,255,255,0.08);">
+                      <img src="gallery_running.png" style="width: 100%; height: 100%; object-fit: cover;"
+                        alt="Running">
+                      <span
+                        style="position: absolute; bottom: 4px; left: 4px; font-size: 6px; background: rgba(0,0,0,0.6); color: #fff; padding: 2px 4px; border-radius: 4px; font-weight: bold;">RUNNING</span>
+                    </div>
+                    <div class="gallery-item-wrap"
+                      style="position: relative; border-radius: 8px; overflow: hidden; height: 64px; border: 1px solid rgba(255,255,255,0.08);">
+                      <img src="gallery_music.png" style="width: 100%; height: 100%; object-fit: cover;" alt="Jamming">
+                      <span
+                        style="position: absolute; bottom: 4px; left: 4px; font-size: 6px; background: rgba(0,0,0,0.6); color: #fff; padding: 2px 4px; border-radius: 4px; font-weight: bold;">JAMMING</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -2199,14 +2548,16 @@
             <!-- BOTTOM NAVIGATION BAR -->
             <div class="phone-bottom-nav">
               <div class="nav-tab active" data-tab="explore" id="tab-explore">
-                <svg class="nav-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="nav-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
                   <circle cx="12" cy="12" r="10"></circle>
                   <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
                 </svg>
                 <span class="nav-tab-label">Explore</span>
               </div>
               <div class="nav-tab" data-tab="feed" id="tab-feed">
-                <svg class="nav-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="nav-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
                   <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
                   <line x1="3" y1="9" x2="21" y2="9"></line>
                   <line x1="9" y1="21" x2="9" y2="9"></line>
@@ -2217,14 +2568,16 @@
                 <div class="plus-btn-inner">+</div>
               </div>
               <div class="nav-tab" data-tab="vibes" id="tab-vibes">
-                <svg class="nav-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="nav-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
                   <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                 </svg>
                 <span class="nav-tab-label">Vibes</span>
                 <span class="vibes-badge-dot"></span>
               </div>
               <div class="nav-tab" data-tab="profile" id="tab-profile">
-                <svg class="nav-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="nav-tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
                   <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                   <circle cx="12" cy="7" r="4"></circle>
                 </svg>
@@ -2243,9 +2596,9 @@
                 </div>
                 <h4 class="sheet-event-title">Regular Practice On Weekends</h4>
                 <div class="sheet-host-row">
-                  <img src="avatar_dev.png" class="sheet-host-avatar" alt="Dev">
+                  <img src="avatar_dev.png" class="sheet-host-avatar" alt="Alex">
                   <div class="sheet-host-info">
-                    <span class="sheet-host-name">Dev (Host)</span>
+                    <span class="sheet-host-name">Alex (Host)</span>
                     <span class="sheet-host-karma">⚡ 60 Karma</span>
                   </div>
                 </div>
@@ -2259,8 +2612,43 @@
               </div>
             </div>
 
+            <!-- HOST EVENT BOTTOM SHEET -->
+            <div class="event-bottom-sheet" id="host-event-sheet" style="height: 260px;">
+              <div class="sheet-drag-handle"></div>
+              <div class="sheet-close-btn" id="host-close-btn">&times;</div>
+              <div class="sheet-content">
+                <h4 class="sheet-event-title" style="margin-bottom: 6px;">Host New Event</h4>
+                <form id="host-event-form" style="display: flex; flex-direction: column; gap: 8px; flex: 1;">
+                  <div style="display: flex; flex-direction: column;">
+                    <input type="text" id="host-event-title" placeholder="Event Name (e.g. Sunday Marathon)" required
+                      style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 6px; color: #fff; font-size: 8.5px; box-sizing: border-box; width: 100%;">
+                  </div>
+                  <div style="display: flex; flex-direction: column;">
+                    <select id="host-event-category"
+                      style="background: rgba(15, 17, 30, 0.95); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 6px; color: #fff; font-size: 8.5px; box-sizing: border-box; width: 100%;">
+                      <option value="Running">🏃 Running</option>
+                      <option value="Gym">💪 Gym</option>
+                      <option value="Guitar">🎸 Music</option>
+                      <option value="Singing">🎤 Singing</option>
+                    </select>
+                  </div>
+                  <div style="display: flex; flex-direction: column;">
+                    <textarea id="host-event-desc" placeholder="Event Description..." required rows="2"
+                      style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 6px; color: #fff; font-size: 8.5px; box-sizing: border-box; width: 100%; resize: none;"></textarea>
+                  </div>
+                  <button type="submit" class="sheet-open-chat-btn"
+                    style="width: 100%; border: none; padding: 8px; font-size: 9px; margin-top: auto;">CREATE
+                    EVENT</button>
+                </form>
+              </div>
+            </div>
+
+            <!-- TOAST NOTIFICATION CONTAINER -->
+            <div class="phone-toast" id="phone-toast">Event hosted successfully!</div>
+
           </div>
         </div>
+        <p class="mockup-disclaimer">Note: This is a simulated preview, not the exact application. The app is a work in progress.</p>
       </div>
     </div>
   </section>
@@ -2300,8 +2688,8 @@
 
       <!-- Default form state -->
       <form class="beta-form" id="beta-form">
-        <input id="beta-email-input" name="email" class="beta-input" type="email" placeholder="Enter your email" required
-          autocomplete="email" />
+        <input id="beta-email-input" name="email" class="beta-input" type="email" placeholder="Enter your email"
+          required autocomplete="email" />
         <button type="submit" class="beta-submit" id="beta-submit-btn">
           <span id="btn-label">Join Beta</span>
           <svg id="btn-spinner"
@@ -2357,11 +2745,13 @@
                 </linearGradient>
               </defs>
               <!-- Right Pin (Light Silver/White for dark footer) -->
-              <path d="M 62 70 C 50 58 42 52 42 42 C 42 31 51 22 62 22 C 73 22 82 31 82 42 C 82 52 74 58 62 70 Z M 62 33 A 9 9 0 1 0 62 51 A 9 9 0 1 0 62 33 Z" 
-                    fill="url(#footerLightGrad)" fill-rule="evenodd" />
+              <path
+                d="M 62 70 C 50 58 42 52 42 42 C 42 31 51 22 62 22 C 73 22 82 31 82 42 C 82 52 74 58 62 70 Z M 62 33 A 9 9 0 1 0 62 51 A 9 9 0 1 0 62 33 Z"
+                fill="url(#footerLightGrad)" fill-rule="evenodd" />
               <!-- Left Pin (Cream) -->
-              <path d="M 38 70 C 26 58 18 52 18 42 C 18 31 27 22 38 22 C 49 22 58 31 58 42 C 58 52 50 58 38 70 Z M 38 33 A 9 9 0 1 0 38 51 A 9 9 0 1 0 38 33 Z" 
-                    fill="url(#footerCreamGrad)" fill-rule="evenodd" />
+              <path
+                d="M 38 70 C 26 58 18 52 18 42 C 18 31 27 22 38 22 C 49 22 58 31 58 42 C 58 52 50 58 38 70 Z M 38 33 A 9 9 0 1 0 38 51 A 9 9 0 1 0 38 33 Z"
+                fill="url(#footerCreamGrad)" fill-rule="evenodd" />
             </svg>
           </div>
           <span class="footer-logo-text">Syncberg</span>
@@ -2532,12 +2922,27 @@
     const phoneViews = document.querySelectorAll('.phone-view');
     const navTabs = document.querySelectorAll('.nav-tab');
     const eventDetailSheet = document.getElementById('event-detail-sheet');
+    const hostEventSheet = document.getElementById('host-event-sheet');
     const filterPeople = document.getElementById('filter-people');
     const filterEvents = document.getElementById('filter-events');
     const peoplePins = document.querySelector('.people-pins-group');
     const eventPins = document.querySelector('.events-pins-group');
     const practiceEventPin = document.getElementById('practice-event-pin');
     const sheetCloseBtn = document.getElementById('sheet-close-btn');
+    const hostCloseBtn = document.getElementById('host-close-btn');
+    const hostEventForm = document.getElementById('host-event-form');
+
+    // Toast Notification helper
+    const showToast = (message) => {
+      const toast = document.getElementById('phone-toast');
+      if (toast) {
+        toast.textContent = message;
+        toast.classList.add('active');
+        setTimeout(() => {
+          toast.classList.remove('active');
+        }, 2500);
+      }
+    };
 
     // Helper to clear active states on phone views and nav tabs
     const deactivateAllViews = () => {
@@ -2552,7 +2957,7 @@
       const targetTab = document.getElementById(`tab-${tabName}`);
       if (targetView) targetView.classList.add('active');
       if (targetTab) targetTab.classList.add('active');
-      
+
       // Update left feature card highlights based on selected tab
       featureCards.forEach(c => c.classList.remove('active'));
       if (tabName === 'explore' || tabName === 'feed') {
@@ -2562,22 +2967,44 @@
       }
     };
 
+    // Update blinking matched profiles based on active interest tags on Profile page
+    const updateBlinkingProfiles = () => {
+      const activeIntList = Array.from(document.querySelectorAll('.profile-interest-tag.active')).map(tag => tag.getAttribute('data-interest'));
+
+      document.querySelectorAll('.people-pins-group .radar-avatar').forEach(pin => {
+        const pinInterestsStr = pin.getAttribute('data-interests') || '';
+        const pinInterests = pinInterestsStr.split(',');
+        const hasOverlap = pinInterests.some(int => activeIntList.includes(int));
+        if (hasOverlap) {
+          pin.classList.add('blink-matched');
+        } else {
+          pin.classList.remove('blink-matched');
+        }
+      });
+    };
+
     // Bottom Tab Bar Click Handlers
     navTabs.forEach(tab => {
       tab.addEventListener('click', () => {
         const tabName = tab.getAttribute('data-tab');
         if (tabName) {
           selectTab(tabName);
-          // Close sheet when switching tabs
+          // Close sheets when switching tabs
           eventDetailSheet?.classList.remove('active');
+          hostEventSheet?.classList.remove('active');
         }
       });
     });
 
-    // Special Plus Button Click Handler
+    // Special Plus Button Click Handler (opens Host New Event Sheet)
     document.getElementById('tab-plus')?.addEventListener('click', () => {
-      // Toggle the event detail sheet as a showcase
-      eventDetailSheet?.classList.toggle('active');
+      hostEventSheet?.classList.add('active');
+      eventDetailSheet?.classList.remove('active');
+    });
+
+    // Close Host event sheet
+    hostCloseBtn?.addEventListener('click', () => {
+      hostEventSheet?.classList.remove('active');
     });
 
     // Radar Filter Toggle (PEOPLE vs EVENTS)
@@ -2616,7 +3043,7 @@
     featureCards.forEach(card => {
       const handleFeatureCardTrigger = () => {
         const targetFeature = card.getAttribute('data-feature');
-        
+
         featureCards.forEach(c => c.classList.remove('active'));
         card.classList.add('active');
 
@@ -2624,6 +3051,7 @@
           selectTab('explore');
           setRadarFilter('people');
           eventDetailSheet?.classList.remove('active');
+          hostEventSheet?.classList.remove('active');
         } else if (targetFeature === 'events') {
           selectTab('explore');
           setRadarFilter('events');
@@ -2631,9 +3059,11 @@
           setTimeout(() => {
             eventDetailSheet?.classList.add('active');
           }, 300);
+          hostEventSheet?.classList.remove('active');
         } else if (targetFeature === 'search') {
           selectTab('vibes');
           eventDetailSheet?.classList.remove('active');
+          hostEventSheet?.classList.remove('active');
         }
       };
 
@@ -2646,6 +3076,7 @@
     profileTags.forEach(tag => {
       tag.addEventListener('click', () => {
         tag.classList.toggle('active');
+        updateBlinkingProfiles(); // Dynamically update blinks!
       });
     });
 
@@ -2662,9 +3093,9 @@
 
     // Action button clicks inside sheets/cards
     document.getElementById('btn-msg-host')?.addEventListener('click', () => {
-      alert('Messaging Host Dev...');
+      alert('Messaging Host Alex...');
     });
-    
+
     document.getElementById('btn-open-chat')?.addEventListener('click', () => {
       eventDetailSheet?.classList.remove('active');
       selectTab('vibes');
@@ -2675,6 +3106,119 @@
         chatItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }
     });
+
+    // Handle Form submission for hosting a new event
+    hostEventForm?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const title = document.getElementById('host-event-title').value.trim();
+      const category = document.getElementById('host-event-category').value;
+      const desc = document.getElementById('host-event-desc').value.trim();
+
+      if (!title || !desc) return;
+
+      // 1. Create and add new Event Pin to Radar map (visible in EVENTS filter)
+      const customEventPin = document.createElement('div');
+      customEventPin.className = 'radar-event-pin custom-event-pin';
+      const pinId = `event-pin-${Date.now()}`;
+      customEventPin.id = pinId;
+      // Random coordinates inside the map layout
+      const topPercent = Math.floor(Math.random() * 40) + 30; // 30% - 70%
+      const leftPercent = Math.floor(Math.random() * 40) + 20; // 20% - 60%
+      customEventPin.style.top = `${topPercent}%`;
+      customEventPin.style.left = `${leftPercent}%`;
+      customEventPin.innerHTML = `
+        <div class="event-pin-pulse"></div>
+        <div class="event-pin-icon">🏆</div>
+        <span class="event-pin-label">${title}</span>
+      `;
+
+      // Click handler on custom pin displays its custom details in Event Sheet
+      customEventPin.addEventListener('click', () => {
+        document.querySelector('#event-detail-sheet .sheet-event-title').textContent = title;
+        document.querySelector('#event-detail-sheet .sheet-badge-special').textContent = category.toUpperCase();
+        document.querySelector('#event-detail-sheet .sheet-event-desc').textContent = desc;
+
+        // Setup the open chat button inside detail sheet to point to this new group chat
+        const openChatBtn = document.getElementById('btn-open-chat');
+        const newChatId = `chat-item-${title.replace(/\s+/g, '-').toLowerCase()}`;
+
+        // Clone and replace button to remove older listeners
+        const newOpenChatBtn = openChatBtn.cloneNode(true);
+        openChatBtn.parentNode.replaceChild(newOpenChatBtn, openChatBtn);
+
+        newOpenChatBtn.addEventListener('click', () => {
+          eventDetailSheet?.classList.remove('active');
+          selectTab('vibes');
+          const chatItem = document.getElementById(newChatId);
+          if (chatItem) {
+            document.querySelectorAll('.chat-list-item').forEach(item => item.classList.remove('active'));
+            chatItem.classList.add('active');
+            chatItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+        });
+
+        eventDetailSheet?.classList.add('active');
+      });
+
+      eventPins?.appendChild(customEventPin);
+
+      // 2. Add corresponding Group Chat to Vibes list
+      const customChatId = `chat-item-${title.replace(/\s+/g, '-').toLowerCase()}`;
+      const newChat = document.createElement('div');
+      newChat.className = 'chat-list-item active';
+      newChat.id = customChatId;
+      newChat.innerHTML = `
+        <div class="chat-avatar-wrap">
+          <div class="chat-group-avatar" style="background: linear-gradient(135deg, #00D2FF, #9D4EDD);">🏆</div>
+          <div class="chat-active-dot"></div>
+        </div>
+        <div class="chat-item-body">
+          <div class="chat-title-row">
+            <span class="chat-title">${title}</span>
+            <span class="chat-time">Now</span>
+          </div>
+          <p class="chat-last-msg">System: Group chat created!</p>
+        </div>
+      `;
+
+      newChat.addEventListener('click', () => {
+        document.querySelectorAll('.chat-list-item').forEach(item => item.classList.remove('active'));
+        newChat.classList.add('active');
+      });
+
+      document.querySelector('.chats-list-container').prepend(newChat);
+
+      // Reset form, close sheet, show success toast
+      hostEventForm.reset();
+      hostEventSheet?.classList.remove('active');
+      showToast("Event created successfully!");
+
+      // Navigate to explore radar events tab so they can see the pin
+      setTimeout(() => {
+        selectTab('explore');
+        setRadarFilter('events');
+      }, 500);
+    });
+
+    // Simple Like toggle handler for feed posts
+    window.toggleLike = (btn) => {
+      btn.classList.toggle('active');
+      const countSpan = btn.querySelector('.like-count');
+      let likesCount = parseInt(countSpan.textContent);
+      if (btn.classList.contains('active')) {
+        likesCount++;
+        btn.style.color = '#f43f5e';
+        btn.querySelector('svg').setAttribute('fill', '#f43f5e');
+      } else {
+        likesCount--;
+        btn.style.color = '#64748b';
+        btn.querySelector('svg').setAttribute('fill', 'none');
+      }
+      countSpan.textContent = likesCount;
+    };
+
+    // Run blinking profile checks on startup
+    updateBlinkingProfiles();
   </script>
 </body>
 
