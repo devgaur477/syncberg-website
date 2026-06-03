@@ -1844,8 +1844,16 @@
       transform: translateY(-2px);
     }
 
-    .tag-emoji {
-      font-size: 16px;
+    .tag-icon {
+      width: 14px;
+      height: 14px;
+      color: #64748b;
+      stroke-width: 2px;
+      transition: color 0.2s;
+    }
+
+    .tag:hover .tag-icon {
+      color: var(--dark);
     }
 
     .interests-cta {
@@ -1870,7 +1878,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 32px;
-      max-width: 900px;
+      max-width: 920px;
       margin: 0 auto 52px;
       text-align: left;
     }
@@ -1896,6 +1904,44 @@
       height: 240px;
       overflow: hidden;
       background: #f5f2ec;
+    }
+
+    .showcase-split-wrap {
+      display: flex;
+      height: 240px;
+      position: relative;
+      overflow: hidden;
+      background: #f5f2ec;
+    }
+
+    .split-side {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+    }
+
+    .split-side:first-child {
+      border-right: 1px solid rgba(22, 27, 46, 0.08);
+    }
+
+    .split-tag {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      font-size: 6px;
+      font-weight: 800;
+      color: #fff;
+      background: rgba(22, 27, 46, 0.65);
+      padding: 3px 6px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+      z-index: 2;
+    }
+
+    .split-tag.brand {
+      background: linear-gradient(135deg, #00D2FF, #0076FF);
+      box-shadow: 0 2px 6px rgba(0, 210, 255, 0.3);
     }
 
     .showcase-img {
@@ -1950,7 +1996,8 @@
         gap: 24px;
         max-width: 460px;
       }
-      .showcase-image-wrap {
+      .showcase-image-wrap,
+      .showcase-split-wrap {
         height: 200px;
       }
     }
@@ -2648,10 +2695,18 @@
                 <div class="profile-tags-section">
                   <h5>My Interests</h5>
                   <div class="profile-interest-tags">
-                    <span class="profile-interest-tag active" data-interest="Running">🏃 Running</span>
-                    <span class="profile-interest-tag active" data-interest="Gym">💪 Gym</span>
-                    <span class="profile-interest-tag" data-interest="Guitar">🎸 Guitar</span>
-                    <span class="profile-interest-tag" data-interest="Singing">🎤 Singing</span>
+                    <span class="profile-interest-tag active" data-interest="Running">
+                      <svg class="phone-tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 8px; height: 8px; margin-right: 3px; vertical-align: middle; display: inline-block;"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon></svg>Running
+                    </span>
+                    <span class="profile-interest-tag active" data-interest="Gym">
+                      <svg class="phone-tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 8px; height: 8px; margin-right: 3px; vertical-align: middle; display: inline-block;"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>Gym
+                    </span>
+                    <span class="profile-interest-tag" data-interest="Guitar">
+                      <svg class="phone-tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 8px; height: 8px; margin-right: 3px; vertical-align: middle; display: inline-block;"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>Guitar
+                    </span>
+                    <span class="profile-interest-tag" data-interest="Singing">
+                      <svg class="phone-tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 8px; height: 8px; margin-right: 3px; vertical-align: middle; display: inline-block;"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v1a7 7 0 0 1-14 0v-1M12 19v4M8 23h8"></path></svg>Singing
+                    </span>
                   </div>
                 </div>
 
@@ -2795,18 +2850,54 @@
     </div>
 
     <div class="interests-tags">
-      <span class="tag"><span class="tag-emoji">🎵</span> Music</span>
-      <span class="tag"><span class="tag-emoji">💪</span> Fitness</span>
-      <span class="tag"><span class="tag-emoji">🎨</span> Art &amp; Design</span>
-      <span class="tag"><span class="tag-emoji">💻</span> Tech</span>
-      <span class="tag"><span class="tag-emoji">🍕</span> Food &amp; Dining</span>
-      <span class="tag"><span class="tag-emoji">📸</span> Photography</span>
-      <span class="tag"><span class="tag-emoji">🎮</span> Gaming</span>
-      <span class="tag"><span class="tag-emoji">🌿</span> Wellness</span>
-      <span class="tag"><span class="tag-emoji">✈️</span> Travel</span>
-      <span class="tag"><span class="tag-emoji">📚</span> Books</span>
-      <span class="tag"><span class="tag-emoji">🎭</span> Entertainment</span>
-      <span class="tag"><span class="tag-emoji">🏡</span> Lifestyle</span>
+      <span class="tag">
+        <svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+        Music
+      </span>
+      <span class="tag">
+        <svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+        Fitness
+      </span>
+      <span class="tag">
+        <svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22C17.52 22 22 17.52 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.52 6.5 22 12 22Z"></path><circle cx="7.5" cy="10.5" r="1.5"></circle><circle cx="11.5" cy="7.5" r="1.5"></circle><circle cx="16.5" cy="9.5" r="1.5"></circle><circle cx="15.5" cy="14.5" r="1.5"></circle></svg>
+        Art &amp; Design
+      </span>
+      <span class="tag">
+        <svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+        Tech
+      </span>
+      <span class="tag">
+        <svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+        Food &amp; Dining
+      </span>
+      <span class="tag">
+        <svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+        Photography
+      </span>
+      <span class="tag">
+        <svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"></rect><path d="M6 12h4M8 10v4M15 11h.01M18 13h.01"></path></svg>
+        Gaming
+      </span>
+      <span class="tag">
+        <svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+        Wellness
+      </span>
+      <span class="tag">
+        <svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon><line x1="9" y1="3" x2="9" y2="18"></line><line x1="15" y1="6" x2="15" y2="21"></line></svg>
+        Travel
+      </span>
+      <span class="tag">
+        <svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 20V2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z"></path></svg>
+        Books
+      </span>
+      <span class="tag">
+        <svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2" ry="2"></rect><line x1="7" y1="2" x2="7" y2="22"></line><line x1="17" y1="2" x2="17" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line><line x1="2" y1="7" x2="7" y2="7"></line><line x1="2" y1="17" x2="7" y2="17"></line><line x1="17" y1="17" x2="22" y2="17"></line><line x1="17" y1="7" x2="22" y2="7"></line></svg>
+        Entertainment
+      </span>
+      <span class="tag">
+        <svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        Lifestyle
+      </span>
     </div>
 
     <!-- Pictures of Interests Showcase -->
@@ -2822,6 +2913,23 @@
         </div>
       </div>
       <div class="showcase-card">
+        <div class="showcase-split-wrap">
+          <div class="split-side">
+            <img src="guitar_alone.png" alt="Playing alone" class="showcase-img">
+            <span class="split-tag">ALONE</span>
+          </div>
+          <div class="split-side">
+            <img src="guitar_jamming.png" alt="Jamming together" class="showcase-img">
+            <span class="split-tag brand">SYNCBERG</span>
+          </div>
+        </div>
+        <div class="showcase-body">
+          <span class="showcase-badge">🎵 Music</span>
+          <h3>From Solo to Jam Sessions</h3>
+          <p>Go from practicing chords alone in your room to collaborating, sharing riffs, and playing in full jam sessions with nearby musicians.</p>
+        </div>
+      </div>
+      <div class="showcase-card">
         <div class="showcase-image-wrap">
           <img src="sports_pickleball.png" alt="Pickleball & Sports" class="showcase-img">
         </div>
@@ -2829,6 +2937,16 @@
           <span class="showcase-badge">🏓 Sports</span>
           <h3>Play &amp; Stay Active</h3>
           <p>Host weekend pickleball matchups, join neighborhood running clubs, or gather a team for casual outdoor game days.</p>
+        </div>
+      </div>
+      <div class="showcase-card">
+        <div class="showcase-image-wrap">
+          <img src="health_club.png" alt="Health & Wellness Clubs" class="showcase-img">
+        </div>
+        <div class="showcase-body">
+          <span class="showcase-badge">🌿 Clubs</span>
+          <h3>Join Health &amp; Wellness Clubs</h3>
+          <p>Be part of local running groups, weekend outdoor yoga clubs, cycling squads, or meditation circles designed to keep you healthy and connected.</p>
         </div>
       </div>
     </div>
