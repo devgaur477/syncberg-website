@@ -2242,10 +2242,49 @@
         align-items: flex-start;
       }
     }
+
+    /* ── TOP FLASHING BANNER ── */
+    .top-flashing-banner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      background: linear-gradient(90deg, #f43f5e, #ec4899);
+      color: white;
+      padding: 12px;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-decoration: none;
+      z-index: 101;
+      position: relative;
+      animation: bannerFlash 1.5s infinite alternate;
+      transition: opacity 0.2s;
+    }
+    
+    .top-flashing-banner:hover {
+      opacity: 0.9;
+    }
+    
+    @keyframes bannerFlash {
+      0% {
+        box-shadow: 0 0 10px rgba(244, 63, 94, 0.5);
+        filter: brightness(1);
+      }
+      100% {
+        box-shadow: 0 0 20px rgba(244, 63, 94, 0.9), inset 0 0 10px rgba(255,255,255,0.3);
+        filter: brightness(1.2);
+      }
+    }
   </style>
 </head>
 
 <body>
+  <!-- TOP BANNER -->
+  <a href="/beta/" class="top-flashing-banner">
+    Try Beta Now
+  </a>
 
   <!-- NAVBAR -->
   <nav>
