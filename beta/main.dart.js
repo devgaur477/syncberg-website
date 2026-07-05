@@ -62669,7 +62669,7 @@ k=k.b6($.bli(),t.Yt)
 k=k.gm(k)
 r.push(new A.TX(q,k==null?A.b([],t.jt):k,l))}else r.push(m.aru(i,h,s))
 k=t.w
-k=A.ap(a,l,k).w.r.b>0?A.ap(a,l,k).w.r.b+90:90
+k=A.ap(a,l,k).w.r.b>0?A.ap(a,l,k).w.r.b+10:40
 q=B.T.K(0.9)
 p=A.a9(16)
 o=A.br(B.ah.K(0.2),B.p,1)
@@ -62686,7 +62686,7 @@ q=A.z("No people found nearby",r,r,r,r,q==null?r:q.bt(B.o),r,r,r)
 s=A.hh().Q
 return A.cg(A.at(A.b([B.WO,B.M,q,B.ay,A.z("Try expanding your search radius.",r,r,r,r,s==null?r:s.bt(B.x),r,r,r)],t.p),B.k,B.aL,B.h,0,B.t),r,r)}s=this.c
 s.toString
-return A.bgq(B.y,r,B.v,B.au,r,r,!1,r,B.W,A.b([new A.Pk(new A.ai(16,A.ap(s,r,t.w).w.r.b+160,16,40),A.bqB(new A.zM(new A.aWQ(a,b),q.gA(a),!0,!0,!0,A.beS(),r),B.a8Y),r)],t.p))},
+return A.bgq(B.y,r,B.v,B.au,r,r,!1,r,B.W,A.b([new A.Pk(new A.ai(16,A.ap(s,r,t.w).w.r.b+80,16,40),A.bqB(new A.zM(new A.aWQ(a,b),q.gA(a),!0,!0,!0,A.beS(),r),B.a8Y),r)],t.p))},
 aru(a,b,c){var s,r,q,p=this,o=null,n=p.ay
 n===$&&A.a()
 n=A.uZ(0,A.hZ(n,new A.aWM(p),o))
@@ -64082,7 +64082,7 @@ if(i!==-1){h=m[i]
 s=A.U(a9).h("b_<1>")
 j=A.S(new A.b_(a9,new A.aYD(a6),s),s.h("x.E"))
 a8.a=j
-B.b.hW(j,0,h)}}a9=A.cH(a7,A.ap(b2,a7,t.w).w.r.b+96,a7)
+B.b.hW(j,0,h)}}a9=A.cH(a7,A.ap(b2,a7,t.w).w.r.b+16,a7)
 s=t.p
 g=A.b([A.bK(a7,A.at(A.b([A.Y(a7,B.WD,B.e,a7,a7,new A.a1(a7,a7,A.br(B.D.K(0.3),B.p,2),a7,a7,a7,B.a9),a7,64,a7,a7,a7,a7,64),B.cb,A.z("Add Vibe",a7,a7,a7,a7,A.X().$3$color$fontSize$fontWeight(B.x,12,B.aa),a7,a7,a7)],s),B.k,B.i,B.h,0,B.t),B.v,!1,a7,a7,a7,a7,a7,a7,a7,a7,a7,a7,a7,a7,a7,a7,a7,a7,a7,a7,a7,new A.aYE(p,b2),a7,a7,a7,a7,a7,a7,!1,B.J),B.bi],s)
 f=t.l7
