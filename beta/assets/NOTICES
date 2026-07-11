@@ -6667,6 +6667,7 @@ google_sign_in_platform_interface
 google_sign_in_web
 image_picker_linux
 image_picker_windows
+palette_generator
 path_provider
 path_provider_linux
 path_provider_platform_interface
